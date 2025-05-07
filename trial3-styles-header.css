@@ -1,12 +1,12 @@
 .header{
     position: fixed;
     display: flex;
-    width: 1485px;
+    width: 100%;
     flex-direction: row;
     justify-content:flex-start;
     align-items: center;
     height: 100px;
-    box-shadow:  2px 2px 20px rgba(0, 0, 0, 0.65);
+    box-shadow:  2px 2px 20px rgba(207, 224, 53, 0.308);
     top: 0;
     left: 0;
     right: 0;
@@ -17,9 +17,8 @@
 }
 
 .name{
-    width: 800px;
-    margin-left: 20px;
-
+    fflex-grow: 1; /* instead of fixed width */
+    margin-left: 2%;
 }
 
 .name-edit{
@@ -29,16 +28,16 @@
     margin-left: 10px;
     margin-right: 10px;
     text-shadow: 0 0 5px rgb(172, 188, 5);
-    
-   
 }
 
 .home{
     background-color: rgb(14, 54, 68);
     border: none;
     border-radius: 30px;
-    width: 100px;
-    height: 40px;
+    font-size: clamp(0.7rem, 1.4vw, 1.3rem); /* responsive text */
+    width: auto; /* removes fixed 100px and 200px */
+    min-width: 80px; /* optional */
+    height: auto; /* optional: let height scale with padding */
     box-shadow:  0px 0px 20px rgba(242, 255, 0, 0.267);
     cursor: pointer;
     color:rgb(244, 244, 142);
@@ -57,8 +56,10 @@
     background-color: rgb(14, 54, 68);
     border: none;
     border-radius: 30px;
-    width: 200px;
-    height: 40px;
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem); /* responsive text */
+    width: auto; /* removes fixed 100px and 200px */
+    min-width: 80px; /* optional */
+    height: auto; /* optional: let height scale with padding */
     cursor: pointer;
     box-shadow:  0px 0px 20px rgba(242, 255, 0, 0.267);
     color:rgb(244, 244, 142);
