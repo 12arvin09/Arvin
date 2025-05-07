@@ -1,0 +1,78 @@
+.information{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /*it was center;*/
+    border-style: none;
+    
+    gap: 20px;
+    padding: 20px;
+}
+
+.profile{
+    width: 600px;
+}
+
+.information-biography{
+    flex: 800px;
+}
+
+@keyframes glow {
+    0% {
+    filter: drop-shadow(0 0 5px rgba(0, 238, 255,0.4));
+    }
+    50% {
+        filter: drop-shadow(0 0 20px rgb(244, 244, 142,0.6));
+    }
+    100% {
+        filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.217));
+    }
+}
+
+.profile-pic{
+    display: block;
+    padding-top: 90px;
+    filter: drop-shadow(0px 0px 20px rgba(0, 238, 255, 0.504));
+    width: 60%;
+    margin: auto;
+    position: relative;
+    animation: glow 5s infinite;
+    z-index: 4;
+}
+
+.profile-name{
+    display: block;
+    margin: auto;
+    width: 400px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.profile-name-name{
+    font-family: "Raleway",sans-serif;
+    font-size: 20px;
+    color: rgb(244, 244, 142);
+}
+
+.profile-name-card{
+    font-family: "Raleway",sans-serif;
+    font-size: 16px;
+    color: rgba(0, 238, 255, 0.600);
+    text-shadow:  0px 0px 20px rgba(244, 244, 142, 0.267);
+}
+
+.biography-header{
+    font-family: "Raleway", sans-serif;
+    font-size: 55px;
+    color: rgb(244, 244, 142);
+    margin-left: 30px;
+    
+}
+
+.biography-text{
+    font-family: "Raleway", sans-serif;
+    color: rgba(0, 238, 255, 0.603);
+    margin-left: 30px;
+    margin-right: 100px;
+    line-height: 30px;
+
+}

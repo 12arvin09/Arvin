@@ -1,0 +1,115 @@
+.timeline{
+                
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    align-items: stretch; 
+}
+
+.timeline-items{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 700px;
+    padding-left: 70px;
+    padding-top: 70px;
+    position: relative;
+    
+}
+
+.item{
+
+    border-radius: 10px;
+    background-color: rgba(14, 205, 219, 0.217);
+    text-align: end;
+    color: rgb(244, 244, 142);
+    font-family: "Raleway";
+    box-shadow:  0px 0px 20px rgba(14, 205, 219, 0.41);
+
+    cursor: pointer;
+    transition: 1s;
+    position: relative;
+       
+}
+
+.item:hover{
+    color: rgb(244, 244, 142);
+    background-color: rgba(14, 205, 219, 0.17);
+    padding-bottom: 10px;
+
+}
+
+.item-role{
+    margin-right: 30px;
+
+}
+
+.item-organization{
+    margin-right: 30px;
+}
+
+.item-description{
+    margin-right: 30px;
+    margin-left: 30px;
+}
+/*
+.timeline-arrow{
+    width: 670px;
+    display: flex;
+    flex-direction: row;
+                   
+}*/
+
+
+.timeline-arrow-experience{
+    width: 300px;
+    padding-left: 200px;
+    text-align: right;
+    
+}
+
+.experience{
+    font-family: "Raleway";
+    font-size: 50px;
+    padding-right: 50px;
+    color: rgb(244, 244, 142);
+}
+
+.icons{
+    width: 60px;
+    border-radius: 50%;
+    position: absolute;
+    right: -25px;
+    top: -30px;
+    border-style: solid;
+    border-color: rgba(16, 52, 54, 0.679);
+    box-shadow:  0px 0px 20px rgba(14, 205, 219, 0.51);
+    border-width: 1px;
+    z-index: 9;
+    cursor: pointer;
+}
+
+.timeline-items::after{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 95%;
+    background: rgb(244, 244, 142);
+    box-shadow:  0px 0px 20px rgba(14, 205, 219, 0.739);
+    right: -70px;
+    z-index: -1;
+}
+.item::after{
+    content: '';
+    position: absolute;
+    width: 10px;
+    border-radius: 50%;
+    height: 10px;
+    background: rgb(14, 205, 219);
+    bottom: 70px;
+    right: -73.5px;
+    z-index: 0;
+}
