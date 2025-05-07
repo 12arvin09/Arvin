@@ -56,7 +56,7 @@
 .profile-name-card{
     font-family: "Raleway",sans-serif;
     font-size: 16px;
-    color: rgba(0, 238, 255, 0.600);
+    color: rgb(252, 252, 252);
     text-shadow:  0px 0px 20px rgba(244, 244, 142, 0.267);
 }
 
@@ -65,12 +65,13 @@
     font-size: 55px;
     color: rgb(244, 244, 142);
     margin-left: 30px;
+    margin-top: 90px;
     
 }
 
 .biography-text{
     font-family: "Raleway", sans-serif;
-    color: rgba(0, 238, 255, 0.603);
+    color: rgba(255, 255, 255, 0.852);
     margin-left: 30px;
     margin-right: 100px;
     line-height: 30px;
