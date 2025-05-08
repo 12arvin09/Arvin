@@ -21,6 +21,85 @@
                 flex-direction: column;
 
             }
+
+                    @media (max-width: 900px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                height: auto;
+                padding: 10px;
+            }
+
+            nav ul {
+                display: none; /* Hides the navigation buttons */
+            }
+
+            .information {
+                flex-direction: column; /* Stacks profile and biography vertically */
+                align-items: center;
+              
+            }
+
+            .profile,
+            .information-biography {
+                width: 100%;
+                margin: 0;
+                padding: 10px;
+                
+            }
+
+            .profile-pic {
+                width: 70%; /* Adjust as needed for small screens */
+                margin-top: 80px;
+            }
+
+            .profile-name {
+                width: 100%;
+            }
+
+            .biography-text {
+                margin: 22px;
+            }
+
+            .timeline{
+                flex-direction: column; /* Stacks profile and biography vertically */
+                align-items: center;
+                flex-direction: column-reverse;
+            }
+
+            .timeline-arrows-experience{
+                width: 100%;
+            }
+
+            .timeline-items{
+                width: 70%;
+                padding-left: 30px;
+                padding-top: 30px;
+
+            }
+
+            .timeline-arrow-experience{
+                padding-left:30px;
+            }
+
+
+        }
+    </style>
+<!--
+    <script> 
+        function updateName() { 
+            const nameEl = document.querySelector('.name-edit'); 
+            if (window.innerWidth <= 900) { 
+                nameEl.textContent = 'Arvin'; 
+            } else { 
+                nameEl.textContent = 'Arvin Munkh-Ochir';   
+            } 
+        } 
+        window.addEventListener('resize', updateName); 
+        window.addEventListener('DOMContentLoaded', updateName); 
+    </script>
+
+-->
         </style>
     </head>
     <body style="background-color:rgb(0, 0, 0);
@@ -135,10 +214,6 @@
                 </div>
 
                 <div class="timeline-arrow">
-                    <div class="arrow">
-                        <div class="real-arrow">
-                        </div>
-                    </div>
                     <div class="timeline-arrow-experience">
                         <p class="experience">Experience</p>
                     </div>
