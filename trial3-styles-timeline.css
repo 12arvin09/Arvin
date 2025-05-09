@@ -30,30 +30,33 @@
     box-shadow:  0px 0px 20px rgba(14, 205, 219, 0.41);
 
     cursor: pointer;
-    transition: 1s;
+    transition: 0.5s;
     position: relative;
        
 }
 
 .item:hover{
-    color: rgb(244, 244, 142);
+    
     background-color: rgba(14, 205, 219, 0.17);
     padding-bottom: 10px;
-
 }
 
 .item-role{
     margin-right: 30px;
+    text-decoration: underline;
+    color: rgb(244, 244, 142);
 
 }
 
 .item-organization{
     margin-right: 30px;
+    font-style: italic;
 }
 
 .item-description{
     margin-right: 30px;
     margin-left: 30px;
+    color: rgba(244, 244, 142, 0.78);
 }
 /*
 .timeline-arrow{
@@ -90,6 +93,7 @@
     border-width: 1px;
     z-index: 9;
     cursor: pointer;
+    transition:0.4s;
 }
 
 .timeline-items::after{
@@ -112,4 +116,10 @@
     bottom: 70px;
     right: -73.5px;
     z-index: 0;
+}
+
+.icons:hover{
+    width:62px;
+    z-index: 8;
+    box-shadow:  0px 0px 20px rgb(244, 244, 142, 0.51);
 }
