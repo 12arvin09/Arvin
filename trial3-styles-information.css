@@ -18,20 +18,20 @@
 
 @keyframes glow {
     0% {
-    filter: drop-shadow(0 0 5px rgba(0, 238, 255,0.4));
+    filter: drop-shadow(0 0 20px rgba(0, 238, 255,0.4));
     }
     50% {
-        filter: drop-shadow(0 0 20px rgb(244, 244, 142,0.6));
+        filter: drop-shadow(0 0 30px rgba(244, 244, 142, 0.635));
     }
     100% {
-        filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.217));
+        filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.426));
     }
 }
 
 .profile-pic{
     display: block;
     padding-top: 90px;
-    filter: drop-shadow(0px 0px 20px rgba(0, 238, 255, 0.504));
+    
     width: 60%;
     margin: auto;
     position: relative;
@@ -55,7 +55,7 @@
 
 .profile-name-card{
     font-family: "Raleway",sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     color: rgb(252, 252, 252);
     text-shadow:  0px 0px 20px rgba(244, 244, 142, 0.267);
 }
@@ -75,5 +75,6 @@
     margin-left: 30px;
     margin-right: 100px;
     line-height: 30px;
+    text-align: justify;
 
 }
