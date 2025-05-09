@@ -9,9 +9,9 @@
         <link rel="stylesheet" href="trial3-styles-information.css"/>
         <link rel="stylesheet" href="trial3-styles-footer.css"/>
         <link rel="stylesheet" href="trial3-styles-timeline.css"/>
+       
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-            
-
             html {
             scroll-behavior: smooth;
             }
@@ -29,17 +29,17 @@
                     height: auto;
                     padding: 10px;
                 }
-    
+
                 nav ul {
                     display: none; /* Hides the navigation buttons */
                 }
-    
+
                 .information {
                     flex-direction: column; /* Stacks profile and biography vertically */
                     align-items: center;
                   
                 }
-    
+
                 .profile,
                 .information-biography {
                     width: 100%;
@@ -47,60 +47,66 @@
                     padding: 10px;
                     
                 }
-    
+
                 .profile-pic {
-                    width: 70%; /* Adjust as needed for small screens */
+                    width: 60%; /* Adjust as needed for small screens */
                     margin-top: 80px;
                 }
-    
+
                 .profile-name {
                     width: 100%;
                 }
-    
+
                 .biography-text {
                     margin: 22px;
                 }
-    
+
                 .timeline{
                     flex-direction: column; /* Stacks profile and biography vertically */
                     align-items: center;
                     flex-direction: column-reverse;
                 }
-    
+
                 .timeline-arrows-experience{
                     width: 100%;
                 }
-    
+
                 .timeline-items{
                     width: 70%;
                     padding-left: 30px;
                     padding-top: 30px;
-    
+
                 }
-    
+
                 .timeline-arrow-experience{
                     padding-left:30px;
                 }
 
 
-        }
-    </style>
+            }
+        </style>
 <!--
-    <script> 
-        function updateName() { 
-            const nameEl = document.querySelector('.name-edit'); 
-            if (window.innerWidth <= 900) { 
-                nameEl.textContent = 'Arvin'; 
-            } else { 
-                nameEl.textContent = 'Arvin Munkh-Ochir';   
+        <script> 
+            document.getElementById('home-button').addEventListener('click', function() { 
+                window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'; 
+                }); 
+        </script>
+
+
+        <script> 
+            function updateName() { 
+                const nameEl = document.querySelector('.name-edit'); 
+                if (window.innerWidth <= 900) { 
+                    nameEl.textContent = 'Arvin'; 
+                } else { 
+                    nameEl.textContent = 'Arvin Munkh-Ochir';   
+                } 
             } 
-        } 
-        window.addEventListener('resize', updateName); 
-        window.addEventListener('DOMContentLoaded', updateName); 
-    </script>
+            window.addEventListener('resize', updateName); 
+            window.addEventListener('DOMContentLoaded', updateName); 
+        </script>
 
 -->
-        </style>
     </head>
     <body style="background-color:rgb(0, 0, 0);
                 height: 2000px;
@@ -115,7 +121,7 @@
                     <nav>
                         <ul>
                             <li>
-                                <button class="home" onclick="location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'">HOME</button>
+                                <button class="home" onclick="location.href='ondospace.html'">HOME</button>
                             </li>
                             <li>
                                 <button class="publications" onclick="location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'">PUBLICATIONS</button>
@@ -155,6 +161,24 @@
                             for IoT firmware. I have experience in data filtering, classification, and integrating machine learning 
                             to build smart, responsive systems.
                         </p>
+                        <p class="biography-text">
+                            I’ve contributed to satellite monitoring and control systems at ONDOSpace LLC using gyroscope sensors, 
+                            C++, and Embedded Rust. I'm an active Rust embedded community member, and I also develop in Lua and LuatOS 
+                            for IoT firmware. I have experience in data filtering, classification, and integrating machine learning 
+                            to build smart, responsive systems.
+                        </p>
+                        <p class="biography-text">
+                            I’ve contributed to satellite monitoring and control systems at ONDOSpace LLC using gyroscope sensors, 
+                            C++, and Embedded Rust. I'm an active Rust embedded community member, and I also develop in Lua and LuatOS 
+                            for IoT firmware. I have experience in data filtering, classification, and integrating machine learning 
+                            to build smart, responsive systems.
+                        </p>
+                        <p class="biography-text">
+                            I’ve contributed to satellite monitoring and control systems at ONDOSpace LLC using gyroscope sensors, 
+                            C++, and Embedded Rust. I'm an active Rust embedded community member, and I also develop in Lua and LuatOS 
+                            for IoT firmware. I have experience in data filtering, classification, and integrating machine learning 
+                            to build smart, responsive systems.
+                        </p>
                         
                     </div>
                 </div>
@@ -164,6 +188,7 @@
             </div>
             <div class="timeline">
                 <div class="timeline-items">
+                    <!--  1  -->
                     <div class="item">
                         <a href="https://ondospace.com/" target="_blank">
                             <img class="icons" src="icons/ondospace.png" alt="Ondospace Logo">
@@ -172,43 +197,48 @@
                         <h3 class="item-organization">Ondospace LLC</h3>
                         <p class="item-description">Programmed gyroscope & temperature sensor for OWL 2.0's 10 satellites in Rust; Designed mission and RBF patches; Mastered in InkScape and Coreldraw.</p>
                     </div>
+                    <!--  2  -->
                     <div class="item">
-                        <a href="https://www.youtube.com/@HamtdaaBodoy" target="_blank">
-                            <img class="icons" src="icons/hamtdaaproject.jpg" alt="Hamtdaa Logo">
+                        <a href="https://drive.google.com/drive/folders/1XITnnTN98NeuPFUCOdZuRBUayWUOTSJv?usp=drive_link" target="_blank">
+                            <img class="icons" src="icons/startup.png" alt="Hamtdaa Logo">
                         </a>
                         <h3 class="item-role">Engineering and Project Lead</h3>
                         <h3 class="item-organization">Initiative for innovative solutions for people with disabilities</h3>
                         <p class="item-description">Designed a smart cane, signaling backpack for the visually impaired, BCI headset detecting letters via brainwaves; Expertly coded in Rust and LuatOS.</p>
                     </div>
+                    <!--  3  -->
                     <div class="item">
-                        <a href="https://ondospace.com/" target="_blank">
-                            <img class="icons" src="icons/ondospace.png" alt="Ondospace Logo">
+                        <a href="https://www.youtube.com/@HamtdaaBodoy" target="_blank">
+                            <img class="icons" src="icons/hamtdaaproject.jpg" alt="Hamtdaa Logo">
                         </a>
                         <h3 class="item-role">Content Creator</h3>
                         <h3 class="item-organization">Hamtdaa project</h3>
                         <p class="item-description">To address the lack of high school-level science content in Mongolia, I created an account that teaches math in both Mongolian and English, providing book recommendations and resources that are otherwise unavailable in Mongolian. Reached 5200+ audience. Pioneered an online problem-solving portal with detailed solutions.</p>
                     </div>
+                    <!--  4  -->
                     <div class="item">
-                        <a href="https://ondospace.com/" target="_blank">
-                            <img class="icons" src="icons/ondospace.png" alt="Ondospace Logo">
+                        <a href="https://www.instagram.com/thetomujinacademy/" target="_blank">
+                            <img class="icons" src="icons/tomujin.jpg" alt="Ondospace Logo">
                         </a>
-                        <h3 class="item-role">Electrical and Computer Engineering Intern</h3>
-                        <h3 class="item-organization">Ondospace LLC</h3>
-                        <p class="item-description">Programmed gyroscope & temperature sensor for OWL 2.0's 10 satellites in Rust; Designed mission and RBF patches; Mastered in InkScape and Coreldraw.</p>
-                    </div><div class="item">
-                        <a href="https://ondospace.com/" target="_blank">
-                            <img class="icons" src="icons/ondospace.png" alt="Ondospace Logo">
+                        <h3 class="item-role">SAT Mathematics Teacher</h3>
+                        <h3 class="item-organization">Tomujin Academy LLC</h3>
+                        <p class="item-description">Boosted SAT scores by 100+ points for 120+ students; Designed innovative syllabus; English-Mongolian vocab lists; Led SAT Math across 5 programs</p>
+                    </div>
+                    <!--  5  -->
+                    <div class="item">
+                        <a href="https://en.moe.gov.mn/" target="_blank">
+                            <img class="icons" src="icons/govofmgl.jpeg" alt="Ministry of Education and Science Logo">
                         </a>
-                        <h3 class="item-role">Electrical and Computer Engineering Intern</h3>
-                        <h3 class="item-organization">Ondospace LLC</h3>
-                        <p class="item-description">Programmed gyroscope & temperature sensor for OWL 2.0's 10 satellites in Rust; Designed mission and RBF patches; Mastered in InkScape and Coreldraw.</p>
+                        <h3 class="item-role">Advanced Physics Teacher</h3>
+                        <h3 class="item-organization">Project "SPENUM" by the Ministry of Education and Science of Mongolia</h3>
+                        <p class="item-description">The project, led by the Mongolian Ministry of Education and Science, recruited Mongolia's top physics Olympiad students. I created three videos on advanced physics topics: Steiner's Theorem, the Polytropic Process, and Vectors</p>
                     </div>
                     <div class="item">
-                        <a href="https://ondospace.com/" target="_blank">
-                            <img class="icons" src="icons/ondospace.png" alt="Ondospace Logo">
+                        <a href="https://www.youtube.com/@nasnii23b7" target="_blank">
+                            <img class="icons" src="icons/class23b.jpg" alt="Ondospace Logo">
                         </a>
-                        <h3 class="item-role">Electrical and Computer Engineering Intern</h3>
-                        <h3 class="item-organization">Ondospace LLC</h3>
+                        <h3 class="item-role">Longest-Serving Class President</h3>
+                        <h3 class="item-organization">One and Only Class 23b of Orchlon International School</h3>
                         <p class="item-description">Programmed gyroscope & temperature sensor for OWL 2.0's 10 satellites in Rust; Designed mission and RBF patches; Mastered in InkScape and Coreldraw.</p>
                     </div>
                 </div>
