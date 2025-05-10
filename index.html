@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="trial3-styles-information.css"/>
         <link rel="stylesheet" href="trial3-styles-footer.css"/>
         <link rel="stylesheet" href="trial3-styles-timeline.css"/>
+        <link rel="stylesheet" href="trial3-styles-project.css"/>
        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
@@ -20,6 +21,13 @@
                 display: flex;
                 flex-direction: column;
 
+            }
+
+            .timeline-projects{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
             }
 
             @media (max-width: 1200px) {
@@ -48,6 +56,18 @@
                     
                 }
 
+                .profile-name-card{
+                    font-size: 14px;
+                }
+
+                .biography-header{
+                    font-size: 25px;
+                }
+
+                .biography-text{
+                    font-size: 13px;
+                }
+
                 .profile-pic {
                     width: 60%; /* Adjust as needed for small screens */
                     margin-top: 80px;
@@ -61,12 +81,6 @@
                     margin: 22px;
                 }
 
-                .timeline{
-                    flex-direction: column; /* Stacks profile and biography vertically */
-                    align-items: center;
-                    flex-direction: column-reverse;
-                }
-
                 .timeline-arrows-experience{
                     width: 100%;
                 }
@@ -78,8 +92,43 @@
 
                 }
 
-                .timeline-arrow-experience{
-                    padding-left:30px;
+                .item::after{
+                    left: -54px;
+                }
+
+                .item{
+                    font-size: 13px;
+                }
+
+                .experience{
+                    font-size: 25px;
+                }
+
+                .timeline-projects {
+                    flex-direction: column;
+                    align-items: center; /* optional: center align when stacked */
+                }
+
+                .timeline,
+                .project-outer {
+                    width: 100%; /* make both take full width */
+                    flex-direction: column; /* Stacks profile and biography vertically */
+                    align-items: center;
+                    
+                }
+                .timeline{
+                    flex-direction: column-reverse;
+                }
+
+                .project-list{
+                    width: 70%;
+                    padding: 10px
+                    
+                }
+
+                .project-text {
+                    padding: 15px;
+                    font-size: 13px;
                 }
 
 
@@ -121,7 +170,7 @@
                     <nav>
                         <ul>
                             <li>
-                                <button class="home" onclick="location.href='ondospace.html'">HOME</button>
+                                <button class="home" onclick="location.href='trial3.html'">HOME</button>
                             </li>
                             <li>
                                 <button class="publications" onclick="location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'">PUBLICATIONS</button>
@@ -167,18 +216,7 @@
                             for IoT firmware. I have experience in data filtering, classification, and integrating machine learning 
                             to build smart, responsive systems.
                         </p>
-                        <p class="biography-text">
-                            I’ve contributed to satellite monitoring and control systems at ONDOSpace LLC using gyroscope sensors, 
-                            C++, and Embedded Rust. I'm an active Rust embedded community member, and I also develop in Lua and LuatOS 
-                            for IoT firmware. I have experience in data filtering, classification, and integrating machine learning 
-                            to build smart, responsive systems.
-                        </p>
-                        <p class="biography-text">
-                            I’ve contributed to satellite monitoring and control systems at ONDOSpace LLC using gyroscope sensors, 
-                            C++, and Embedded Rust. I'm an active Rust embedded community member, and I also develop in Lua and LuatOS 
-                            for IoT firmware. I have experience in data filtering, classification, and integrating machine learning 
-                            to build smart, responsive systems.
-                        </p>
+                        
                         
                     </div>
                 </div>
@@ -186,84 +224,105 @@
 
                 </div>
             </div>
-            <div class="timeline">
-                <div class="timeline-items">
-                    <!--  1  -->
-                    <div class="item">
-                        <a href="https://ondospace.com/" target="_blank">
-                            <img class="icons" src="icons/ondospace.png" alt="Ondospace Logo">
-                        </a>
-                        <h3 class="item-role">Electrical and Computer Engineering Intern</h3>
-                        <h3 class="item-organization">Ondospace LLC</h3>
-                        <p class="item-description">Programmed gyroscope & temperature sensor for OWL 2.0's 10 satellites in Rust; Designed mission and RBF patches; Mastered in InkScape and Coreldraw.</p>
-                    </div>
-                    <!--  2  -->
-                    <div class="item">
-                        <a href="https://drive.google.com/drive/folders/1XITnnTN98NeuPFUCOdZuRBUayWUOTSJv?usp=drive_link" target="_blank">
-                            <img class="icons" src="icons/startup.png" alt="Hamtdaa Logo">
-                        </a>
-                        <h3 class="item-role">Engineering and Project Lead</h3>
-                        <h3 class="item-organization">Initiative for innovative solutions for people with disabilities</h3>
-                        <p class="item-description">Designed a smart cane, signaling backpack for the visually impaired, BCI headset detecting letters via brainwaves; Expertly coded in Rust and LuatOS.</p>
-                    </div>
-                    <!--  3  -->
-                    <div class="item">
-                        <a href="https://www.youtube.com/@HamtdaaBodoy" target="_blank">
-                            <img class="icons" src="icons/hamtdaaproject.jpg" alt="Hamtdaa Logo">
-                        </a>
-                        <h3 class="item-role">Content Creator</h3>
-                        <h3 class="item-organization">Hamtdaa project</h3>
-                        <p class="item-description">To address the lack of high school-level science content in Mongolia, I created an account that teaches math in both Mongolian and English, providing book recommendations and resources that are otherwise unavailable in Mongolian. Reached 5200+ audience. Pioneered an online problem-solving portal with detailed solutions.</p>
-                    </div>
-                    <!--  4  -->
-                    <div class="item">
-                        <a href="https://www.instagram.com/thetomujinacademy/" target="_blank">
-                            <img class="icons" src="icons/tomujin.jpg" alt="Ondospace Logo">
-                        </a>
-                        <h3 class="item-role">SAT Mathematics Teacher</h3>
-                        <h3 class="item-organization">Tomujin Academy LLC</h3>
-                        <p class="item-description">Boosted SAT scores by 100+ points for 120+ students; Designed innovative syllabus; English-Mongolian vocab lists; Led SAT Math across 5 programs</p>
-                    </div>
-                    <!--  5  -->
-                    <div class="item">
-                        <a href="https://en.moe.gov.mn/" target="_blank">
-                            <img class="icons" src="icons/govofmgl.jpeg" alt="Ministry of Education and Science Logo">
-                        </a>
-                        <h3 class="item-role">Advanced Physics Teacher</h3>
-                        <h3 class="item-organization">Project "SPENUM" by the Ministry of Education and Science of Mongolia</h3>
-                        <p class="item-description">The project, led by the Mongolian Ministry of Education and Science, recruited Mongolia's top physics Olympiad students. I created three videos on advanced physics topics: Steiner's Theorem, the Polytropic Process, and Vectors</p>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.youtube.com/@nasnii23b7" target="_blank">
-                            <img class="icons" src="icons/class23b.jpg" alt="Ondospace Logo">
-                        </a>
-                        <h3 class="item-role">Longest-Serving Class President</h3>
-                        <h3 class="item-organization">One and Only Class 23b of Orchlon International School</h3>
-                        <p class="item-description">Programmed gyroscope & temperature sensor for OWL 2.0's 10 satellites in Rust; Designed mission and RBF patches; Mastered in InkScape and Coreldraw.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-arrow">
-                    <div class="timeline-arrow-experience">
+            <div class="timeline-projects">
+                <div class="timeline">
+                    <div class="timeline-items">
                         <p class="experience">Experience</p>
+                        <!--  1  -->
+                        <div class="item" onclick="location.href='ondospace.html'">
+                            <a href="https://ondospace.com/" target="_blank">
+                                <img class="icons" src="icons/ondospace.png" alt="Ondospace Logo">
+                            </a>
+                            <p class="item-description">2024 . 12 - 2024 . 06</p>
+                            <h3 class="item-role">Electrical and Computer Engineering Intern</h3>
+                            <p class="item-organization">Ondospace LLC</p>
+                            
+                        </div>
+                        <!--  2  -->
+                        <div class="item">
+                            <a href="https://drive.google.com/drive/folders/1XITnnTN98NeuPFUCOdZuRBUayWUOTSJv?usp=drive_link" target="_blank">
+                                <img class="icons" src="icons/startup.png" alt="Hamtdaa Logo">
+                            </a>
+                            <p class="item-description">2024 . 12 - 2024 . 06</p>
+                            <h3 class="item-role">Engineering and Project Lead</h3>
+                            <p class="item-organization">Initiative for innovative solutions for people with disabilities</p>
+                        </div>
+                        <!--  3  -->
+                        <div class="item">
+                            <a href="https://www.youtube.com/@HamtdaaBodoy" target="_blank">
+                                <img class="icons" src="icons/hamtdaaproject.jpg" alt="Hamtdaa Logo">
+                            </a>
+                            <p class="item-description">2024 . 12 - 2024 . 06</p>
+                            <h3 class="item-role">Content Creator</h3>
+                            <p class="item-organization">Hamtdaa project</p>
+                        </div>
+                        <!--  4  -->
+                        <div class="item">
+                            <a href="https://www.instagram.com/thetomujinacademy/" target="_blank">
+                                <img class="icons" src="icons/tomujin.jpg" alt="Ondospace Logo">
+                            </a>
+                            <p class="item-description">2024 . 12 - 2024 . 06</p>
+                            <h3 class="item-role">SAT Mathematics Teacher</h3>
+                            <p class="item-organization">Tomujin Academy LLC</p>
+                        </div>
+                        <!--  5  -->
+                        <div class="item">
+                            <a href="https://en.moe.gov.mn/" target="_blank">
+                                <img class="icons" src="icons/govofmgl.jpeg" alt="Ministry of Education and Science Logo">
+                            </a>
+                            <p class="item-description">2024 . 12 - 2024 . 06</p>
+                            <h3 class="item-role">Advanced Physics Teacher</h3>
+                            <p class="item-organization">Project "SPENUM" by the Ministry of Education and Science of Mongolia</p>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.youtube.com/@nasnii23b7" target="_blank">
+                                <img class="icons" src="icons/class23b.jpg" alt="Ondospace Logo">
+                            </a>
+                            <p class="item-description">2024 . 12 - 2024 . 06</p>
+                            <h3 class="item-role">Longest-Serving Class President</h3>
+                            <p class="item-organization">One and Only Class 23b of Orchlon International School</p>
+                        </div>
                     </div>
-                    
                 </div>
 
-            </div>
-            <div class="project-bar">
-                <p class="project-name">Projects</p>
-                <div class="project-aligned">
-                    <div class="project">
-                        <div class="project-photo">
-
-                        </div>
-                        <div class="project-text">
-
+                <div class="project-outer">
+                    <div class="project-header">
+                        <p class="project-header-style">Projects</p>
+                    </div>
+                    <div class="project-list">
+                            <div class="project">
+                                <div class="project-image-container">
+                                    <img class="project-pic" src="project/bci/bci1.jpg"> 
+                                </div>
+                                <div class="project-text">
+                                    <p class="project-title">Spelling Letters Through Brainwaves</p>
+                                    <p class="project-description">This paper explores the potential of brain-computer interfaces (BCIs), a key area within human-computer interaction (HCI), using non-invasive EEG technology to detect letters from brain signals. While BCIs are rarely studied in Mongolia, this project marks an early effort to bridge brain signals with technology, laying the foundation for future development in the field.</p>
+                                </div>
+                            </div>
+                            <div class="project">
+                                <div class="project-image-container">
+                                    <img class="project-pic" src="project/smartcane/smartcane1.jpg">
+                                </div>
+                                <div class="project-text">
+                                    <p class="project-title">Smart Cane For Visually Impaired People</p>
+                                    <p class="project-description">This paper presents the first version of a smart cane designed to support visually impaired individuals, addressing key challenges such as water, obstacle, and hole detection. Using five infrared sensors and a water sensor controlled by a microcontroller, the cane identifies various obstacles and provides real-time audio feedback. Developed in response to limited infrastructure and slow IoT progress, this project marks an early step toward improving accessibility for visually impaired users.</p>
+                                </div>
+                            </div>
+                            <div class="project">
+                                <div class="project-image-container">
+                                    
+                                    <img class="project-pic" src="project/smartbp/smartbp1.jpg"> 
+                                </div>
+                                <div class="project-text">
+                                    <p class="project-title">Location Sensing Smart Backpack</p>
+                                    <p class="project-description">This paper introduces a smart backpack designed to support visually impaired individuals as they navigate changing urban environments. Equipped with features like location sensing, time telling, and location sharing, the device enhances safety, independence, and daily functionality. It represents an early step toward long-term, inclusive solutions that empower users and adapt to evolving urban challenges.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
             <div class="footer">
                 <div class="homepage-picture-name">
                     <div class="homepage-picture">
