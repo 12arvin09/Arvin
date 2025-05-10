@@ -1,131 +1,80 @@
-.timeline{
-    flex:1;
+.information{
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: flex-start; /*it was center;*/
+    border-style: none;
+    
     gap: 20px;
     padding: 20px;
-    align-items: stretch; 
 }
 
-.timeline-items{
-    flex:1;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding-left: 60px;
-    padding-top: 2px;
-    position: relative;  
+.profile{
+    width: 600px;
 }
 
-.item{
+.information-biography{
+    flex: 800px;
+}
 
-    border-radius: 10px;
-    background-color: rgba(14, 205, 219, 0.217);
-    text-align: start;
-    color: rgb(244, 244, 142);
-    font-family: "Raleway";
-    box-shadow:  0px 0px 20px rgba(14, 205, 219, 0.41);
-    cursor: pointer;
-    transition: 0.5s;
+@keyframes glow {
+    0% {
+    filter: drop-shadow(0 0 20px rgba(0, 238, 255,0.4));
+    }
+    50% {
+        filter: drop-shadow(0 0 30px rgba(244, 244, 142, 0.635));
+    }
+    100% {
+        filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.426));
+    }
+}
+
+.profile-pic{
+    display: block;
+    padding-top: 90px;
+    
+    width: 60%;
+    margin: auto;
     position: relative;
-
-    margin-left: 90px;
+    animation: glow 5s infinite;
+    z-index: 4;
 }
 
-.item:hover{
-    
-    background-color: rgba(14, 205, 219, 0.17);
-    padding-bottom: 10px;
+.profile-name{
+    display: block;
+    margin: auto;
+    width: 400px;
+    text-align: center;
+    padding-top: 40px;
 }
 
-.item-role{
-    margin-left: 30px;
-    text-decoration: underline;
-    color: rgb(244, 244, 142);
-
-}
-
-.item-organization{
-    margin-left: 30px;
-    margin-right: 30px;
-    font-style: normal !important;
-}
-
-.item-description{
-    
-    margin-left: 30px;
-    color: rgba(244, 244, 142, 0.78);
-}
-/*
-.timeline-arrow{
-    width: 670px;
-    display: flex;
-    flex-direction: row;
-                   
-}*/
-
-
-.project{
-    flex:1;
-    padding-left: 200px;
-    text-align: left;
-    
-    padding-left: 90px;
-
-    border-style: solid;
-    border-color: aliceblue;
-    
-}
-
-.experience{
-
-    font-family: "Raleway";
-    font-size: 50px;
-    padding-right: 50px;
+.profile-name-name{
+    font-family: "Raleway",sans-serif;
+    font-size: 20px;
     color: rgb(244, 244, 142);
 }
 
-.icons{
-    width: 60px;
-    border-radius: 50%;
-    position: absolute;
-    left: -25px;
-    top: -30px;
-    border-style: solid;
-    border-color: rgba(16, 52, 54, 0.679);
-    box-shadow:  0px 0px 20px rgba(14, 205, 219, 0.51);
-    border-width: 1px;
-    z-index: 9;
-    cursor: pointer;
-    transition:0.4s;
+.profile-name-card{
+    font-family: "Raleway",sans-serif;
+    font-size: 18px;
+    color: rgb(252, 252, 252);
+    text-shadow:  0px 0px 20px rgba(244, 244, 142, 0.267);
 }
 
-.timeline-items::after{
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 80%;
-    background: rgb(244, 244, 142);
-    box-shadow:  0px 0px 20px rgba(14, 205, 219, 0.739);
-    left:70px;
-    top: 200px;
-    z-index: -1;
-}
-.item::after{
-    content: '';
-    position: absolute;
-    width: 10px;
-    border-radius: 50%;
-    height: 10px;
-    background: rgb(14, 205, 219);
-    bottom: 70px;
-    left: -85px;
-    z-index: 0;
+.biography-header{
+    font-family: "Raleway", sans-serif;
+    font-size: 55px;
+    color: rgb(244, 244, 142);
+    margin-left: 30px;
+    margin-top: 90px;
+    
 }
 
-.icons:hover{
-    width:62px;
-    z-index: 8;
-    box-shadow:  0px 0px 20px rgb(244, 244, 142, 0.51);
+.biography-text{
+    font-family: "Raleway", sans-serif;
+    color: rgba(255, 255, 255, 0.852);
+    margin-left: 30px;
+    margin-right: 100px;
+    line-height: 30px;
+    text-align: justify;
+
 }
