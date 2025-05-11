@@ -30,6 +30,7 @@ HEADER STYLING (Default > 900px)
         color: rgb(244, 244, 142);
         font-size: 55px;
         font-family: "Raleway", sans-serif;
+        font-size: clamp(1.2rem, 5vw, 3rem);
 
         margin-left: 10px;
         margin-right: 10px;
