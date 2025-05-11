@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="trial3-styles-footer.css"/>
         <link rel="stylesheet" href="trial3-styles-timeline.css"/>
         <link rel="stylesheet" href="trial3-styles-project.css"/>
+        <link rel="stylesheet" href="trial3-styles-slider.css"/>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
        
@@ -26,10 +27,20 @@
                 box-sizing: border-box;
             }
 
+            .footer {
+                color: #f4f48e; 
+                text-align: center;
+                padding: 20px 0;
+                font-family: "Raleway", sans-serif;
+                font-size: 16px;
+
+            }
+
             .full-homepage{
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                align-items: center;
                 width: 100%;
 
             }
@@ -62,6 +73,15 @@
                 border-style: none;
                 background-color: transparent;
             }
+
+            .slide-header{
+                font-family: "Raleway";
+                font-size: 50px;
+                color: rgb(244, 244, 142);
+                margin-left: 80px;
+
+            }
+
             @media (max-width: 1200px) {
                 .header {
                     flex-direction: column;
@@ -187,7 +207,7 @@
 
                 .experience{
                     font-size: 25px;
-                    text-align: center;
+                    text-align: left;
                     padding: 0;
                     
                 }
@@ -203,6 +223,7 @@
                     width: 100%; /* make both take full width */
                     flex-direction: column; /* Stacks profile and biography vertically */
                     align-items: center;
+                    text-align: left;
                     
                 }
                 .timeline{
@@ -243,9 +264,11 @@
                     line-height: 30px;
                     text-align: left;
                 }
-
+                
                 .project-header-style{
                     font-size: 25px;
+                    text-align: left;
+                    
                 }
 
                 .item-description{
@@ -259,6 +282,34 @@
                 .item-role{
                     font-size: clamp(0.9rem, 1.5vw, 2rem);
                 }
+
+                .autoplay-slider-container{
+                    width: 80%;
+                    height: 330px;
+                }
+
+                .slide-header{
+                    font-size: 25px;
+                    text-align: left;
+                }
+
+                .slide{
+                    height: 270px;
+                }
+
+                .autoplay-slider-container::before, .autoplay-slider-container::after{
+                    width: 20%;
+                }
+
+                .autoplay-slider-container::before{
+                    left: -10px;
+                }
+
+                .footer{
+                    font-size: clamp(0.7rem, 1.5vw, 1.3rem);
+                    margin-left: 20px;
+                }
+
             }
 
             @media (max-width: 900px) {
@@ -284,6 +335,13 @@
                     line-height: 26px;
                     text-align: left;
                 }
+
+                .slide{
+                    height: 250px;
+                }
+                .project-header-style{
+                    text-align: left;
+                }
             }
 
             @media (max-width: 600px) {
@@ -294,6 +352,13 @@
                 .project-description{
                     font-size: clamp(0.7rem, 2vw, 1.5rem);
                     line-height: 23px;
+                    text-align: left;
+                }
+                .slide{
+                    height: 230px;
+                }
+
+                .project-header-style{
                     text-align: left;
                 }
             }
@@ -322,9 +387,10 @@
 -->
     </head>
     <body style="background-color:rgb(0, 0, 0);
-                height: 2000px;
+                height: 2700px;
                 padding-top: 100px;
-    margin:0;">
+    margin-left:0;
+    margin-right:0;">
         <div class="full-homepage">
             <div class="header">
                 <div class="name">
@@ -422,8 +488,8 @@
                             
                         </div>
                         <!--  2  -->
-                        <div class="item" onclick="location.href='project.html'>
-                            <a>
+                        <div class="item" onclick="location.href='startup.html'">
+                            <a href="https://ondospace.com/" target="_blank">
                                 <img class="icons" src="icons/startup.png" alt="Hamtdaa Logo">
                             </a>
                             <p class="item-description">2024 . 12 - 2024 . 06</p>
@@ -431,7 +497,7 @@
                             <p class="item-organization">Initiative for innovative solutions for people with disabilities</p>
                         </div>
                         <!--  3  -->
-                        <div class="item">
+                        <div class="item" onclick="location.href='startup.html'">
                             <a href="https://www.youtube.com/@HamtdaaBodoy" target="_blank">
                                 <img class="icons" src="icons/hamtdaaproject.jpg" alt="Hamtdaa Logo">
                             </a>
@@ -440,7 +506,7 @@
                             <p class="item-organization">Hamtdaa project</p>
                         </div>
                         <!--  4  -->
-                        <div class="item">
+                        <div class="item" onclick="location.href='project.html''">
                             <a href="https://www.instagram.com/thetomujinacademy/" target="_blank">
                                 <img class="icons" src="icons/tomujin.jpg" alt="Ondospace Logo">
                             </a>
@@ -468,11 +534,11 @@
                     </div>
                 </div>
                 <div class="project-outer">
-                    <div class="project-header">
-                        <p class="project-header-style">Projects</p>
-                    </div>
+                    
+                    <p class="project-header-style">Projects</p>
+                    
                     <div class="project-list">
-                            <div class="project">
+                            <div class="project" onclick="location.href='startup.html'">
                                 <div class="project-image-container">
                                     <img class="project-pic" src="project/bci/bci1.jpg"> 
                                 </div>
@@ -481,7 +547,7 @@
                                     <p class="project-description">This paper explores the potential of brain-computer interfaces (BCIs), a key area within human-computer interaction (HCI), using non-invasive EEG technology to detect letters from brain signals. While BCIs are rarely studied in Mongolia, this project marks an early effort to bridge brain signals with technology, laying the foundation for future development in the field.</p>
                                 </div>
                             </div>
-                            <div class="project">
+                            <div class="project" onclick="location.href='startup.html'">
                                 <div class="project-image-container">
                                     <img class="project-pic" src="project/smartcane/smartcane1.jpg">
                                 </div>
@@ -490,7 +556,7 @@
                                     <p class="project-description">This paper presents the first version of a smart cane designed to support visually impaired individuals, addressing key challenges such as water, obstacle, and hole detection. Using five infrared sensors and a water sensor controlled by a microcontroller, the cane identifies various obstacles and provides real-time audio feedback. Developed in response to limited infrastructure and slow IoT progress, this project marks an early step toward improving accessibility for visually impaired users.</p>
                                 </div>
                             </div>
-                            <div class="project">
+                            <div class="project" onclick="location.href='startup.html'">
                                 <div class="project-image-container">
                                     
                                     <img class="project-pic" src="project/smartbp/smartbp1.jpg"> 
@@ -504,7 +570,45 @@
                     </div>
                 </div>
             </div>
-            
+            <p class="slide-header">Been Part of</p>
+            <div class="autoplay-slider-container">
+                <div class="slide-track">
+                    <div onclick="location.href='ondospace.html'" class="slide">
+                        <img class="slide-pic" src="ondospace/os1.JPG">
+                        <p class="slide-text">At OndoSpace</p>
+                    </div>
+                    <div class="slide">
+                        <img class="slide-pic" src="image/arvin-official.png">
+                        <p class="slide-text">At Tomujin Academy</p>
+                    </div>
+                    <div class="slide">
+                        <img class="slide-pic" src="ondospace/os3.JPG">
+                        <p></p>
+                    </div>
+                    <div class="slide">
+                        <img class="slide-pic" src="ondospace/os4.JPG">
+                        <p></p>
+                    </div>
+                    <div class="slide">
+                        <img class="slide-pic" src="ondospace/os5.JPG">
+                        <p></p>
+                    </div>
+                    <div class="slide">
+                        <img class="slide-pic" src="ondospace/os6.JPG">
+                        <p></p>
+                    </div>
+                    <div class="slide">
+                        <img class="slide-pic" src="ondospace/os7.JPG">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <p>Thank you for welcoming my page.Have a great day</p>
+                <p><i class="fa-solid fa-copyright"></i> 2025 Arvin. All rights reserved</p>
+            </div>
+
+            <!--
             <div class="footer">
                 <div class="homepage-picture-name">
                     <div class="homepage-picture">
@@ -515,6 +619,7 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
     </body>
 </html>
