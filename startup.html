@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arvin</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="trial3-styles-header.css"/>
+        <link rel="stylesheet" href="activity-styles.css"/>
+        <style>
+            html {
+            scroll-behavior: smooth;
+            }
+
+            @media (max-width: 1200px) {
+                .header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    height: auto;
+                    padding: 0px;
+                }
+
+                nav ul {
+                    display: none; /* Hides the navigation buttons */
+                }
+
+                .information {
+                    flex-direction: column; /* Stacks profile and biography vertically */
+                    align-items: center; /* This ensures children are centered horizontally */
+                    justify-content: center;
+                    padding: 0;
+                  
+                }
+
+                .activity-name-name{
+                    padding-top: 10px;
+                }
+                .activity {
+                    display: flex;
+                    flex-direction: column; /* Stacks profile and biography vertically */
+                    align-items: center;
+                  
+                }
+
+                .activity-pic-gallery,
+                .activity-description {
+                    width: 100%;
+                    margin: 0;
+                    padding: 20px;
+                    font-size: clamp(1.2rem, 2vw, 2rem);
+                
+                }
+
+                .activity-description-text {
+                    line-height: 35px;
+                    margin-left: 30px;
+                    margin-right: 30px;
+                }
+
+                .gallery-container{
+                    width: 80%;
+                    height: 100%;
+                }
+
+                .pic{
+                    height: 400px;
+                    width: 100%;
+                    
+                }
+
+                .caption-text{
+                    font-size: clamp(1.2rem, 1.8vw, 2rem);
+                }
+
+                .dot{
+
+                    height: 6px;
+                    width: 6px;
+                    margin: 18px 8px;
+
+                }
+
+                .prev{
+                    left: -60px;
+                }
+
+                .next{
+                    right: -60px;
+                }
+
+            }
+
+            @media (max-width: 900px) {
+                .activity-name{
+                    margin-top: 10px;
+                }
+
+                .activity-name-name{
+                    font-size: clamp(1.7rem, 2vw, 1.5rem);
+                    padding-top: -30px;
+                }
+                .activity-pic-gallery,
+                .activity-description {
+                    width: 100%;
+                    margin: 0;
+                    padding: 10px;
+                    font-size: clamp(1.2rem, 1.7vw, 1.8rem);
+                    
+                }
+                .activity-description-text {
+                    line-height: 27px;
+                    margin-left: 30px;
+                    margin-right: 30px;
+            
+                }
+
+                .gallery-container{
+                    width: 70%;
+                    height: 100%;
+                }
+
+                .pic{
+                    height: 330px;
+                    width: 100%;
+                    
+                }
+
+                .caption-text{
+                    font-size: clamp(0.6rem, 1.6vw, 1.5rem);
+                }
+
+                .dot{
+
+                    height: 8px;
+                    width: 8px;
+                    margin: 18px 8px;
+
+                }
+
+                .prev{
+                    left: -30px;
+                }
+
+                .next{
+                    right: -30px;
+                }
+
+            }
+
+            @media (max-width: 600px) {
+
+                .activity-name{
+                    margin-top: 10px;
+                }
+
+                .activity-name-name{
+                    font-size: clamp(1.5rem, 2vw, 1.5rem);
+                    margin-top: -10px;
+                }
+                
+                .activity-pic-gallery,
+                .activity-description {
+                    width: 100%;
+                    margin: 0;
+                    padding: 10px;
+                    font-size: clamp(0.8rem, 1.6vw, 1.5rem);
+                    
+                }
+
+                .activity-description-text{
+                    line-height: 23px;
+                    margin-left: 30px;
+                    margin-right: 30px;
+                }
+
+                .gallery-container{
+                    width: 70%;
+                    height: 100%;
+
+                }
+
+                .pic{
+                    height: 230px;
+                    width: 100%;
+                    
+                }
+
+                .caption-text{
+                    font-size: clamp(0.7rem, 1.6vw, 1.5rem);
+                }
+
+                .dot{
+
+                    height: 6px;
+                    width: 6px;
+                    margin: 18px 8px;
+
+                }
+
+                .prev{
+                    left: -30px;
+                }
+
+                .next{
+                    right: -30px;
+                }
+            }
+
+        </style>
+    </head>
+    <body style="background-color:rgb(0, 0, 0);
+                height: 1500px;
+                padding-top: 100px;
+                margin:0;
+                ">
+        <div class="full-homepage">
+            <div class="header">
+                <div class="name">
+                    <p class="name-edit" onclick="location.href='trial3.html'">Arvin Munkh-Ochir's Hub</p>
+                </div>
+                <div class="links">
+                    <nav>
+                        <ul>
+                            <li>
+                                <button class="home" onclick="location.href='trial3.html'">HOME</button>
+                            </li>
+                            <li>
+                                <button class="publications" onclick="location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'">PUBLICATIONS</button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="activity-name">
+                <p class="activity-name-name">Internship at <span><a class="ondospace-name" href="https://ondospace.com/" target="_blank">ONDOSpace</a></span></p>
+            </div>
+            <div class="activity">
+                <div class="activity-pic-gallery">
+                    <div class="gallery-container">
+                        <div class="gallery">
+                            <div class="index">1/10</div>
+                            <img class="pic" src="startup/start1.jpg">
+                            <p class="caption-text">With Amazing ONDOSpace Engineers</p>
+                            
+                        </div>
+                        <div class="gallery">
+                            <div class="index">2/10</div>
+                            <img class="pic" src="startup/start2.jpg">
+                            <p class="caption-text">At ONDO Holding LLC Conference</p>
+                            
+                        </div>
+                        <div class="gallery">
+                            <div class="index">3/10</div>
+                            <img class="pic" src="startup/start3.jpg">
+                            <p class="caption-text">CEO of ONDO is giving speech</p>
+                            
+                        </div>
+                        <div class="gallery">
+                            <div class="index">4/10</div>
+                            <img class="pic" src="startup/start4.jpg">
+                            <p class="caption-text">Glimpse of our amazing engineer brothers' table</p>
+                            
+                        </div>
+                        <div class="gallery">
+                            <div class="index">5/10</div>
+                            <img class="pic" src="startup/start5.jpg">
+                            <p class="caption-text">Meeting calls with amazing Tsoomoo ah</p>
+                            
+                        </div>
+                        <div class="gallery">
+                            <div class="index">6/10</div>
+                            <img class="pic" src="startup/start6.jpg">
+                            <p class="caption-text">QSL card I have created</p>
+                            
+                        </div>
+                        <div class="gallery">
+                            <div class="index">7/10</div>
+                            <img class="pic" src="startup/start7.jpg">
+                            <p class="caption-text">Manufacturation days</p>
+                            
+                        </div>
+                        <div class="gallery">
+                            <div class="index">8/10</div>
+                            <img class="pic" src="startup/start8.jpg">
+                            <p class="caption-text">Amazing Bude ah soldering the items</p>
+                            
+                        </div>
+                        <div class="gallery">
+                            <div class="index">9/10</div>
+                            <img class="pic" src="startup/start9.jpg">
+                            <p class="caption-text">Again with Tsoomoo ah on deployment day</p>
+                            
+                        </div>
+                        <div class="gallery">
+                            <div class="index">10/10</div>
+                            <img class="pic" src="startup/start10.jpg">
+                            <p class="caption-text">Those clever solar panels</p>
+                            
+                        </div>
+                        <a class="prev" onclick="plusSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlide(1)">&#10095;</a>
+                    </div>
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                        <span class="dot" onclick="currentSlide(6)"></span>
+                        <span class="dot" onclick="currentSlide(7)"></span>
+                        <span class="dot" onclick="currentSlide(8)"></span>
+                        <span class="dot" onclick="currentSlide(9)"></span>
+                        <span class="dot" onclick="currentSlide(10)"></span>
+                    </div>
+                </div>
+                <div class="activity-description">
+                    <p class="activity-description-text">After spending six incredible months at this amazing place, I'm finally beginning to feel the impact of my second gap year. 
+                        People often say, "Hurry up and learn." But I’ve come to realize something deeper. Rather than pretending to be someone who never wastes time but fills their head with knowledge they don’t truly understand, 
+                        I want to become someone who is consciously shaping their future—someone who overcomes challenges, finds joy in the process, and uses the opportunities available to young people with clarity and purpose. 
+                        On this journey, I found ONDOSPACE. Before this, the word "engineer" was just a title to me—something that sounded powerful but meant little beyond that. I didn’t know what engineers actually did, how they built 
+                        things, or why they did it. But since joining ONDOSPACE on December 12th, I've started to move away from pretending to know everything and toward truly filling in the gaps of what I don’t know. I’m deeply grateful 
+                        to the mentors—those older brothers and sisters—who welcomed me without judgment. You never labeled me as “empty.” Instead, you reflected on even my smallest actions with care, and gave me encouragement, knowledge,
+                         and inspiration that I will carry forward. With everything I’ve gained here, I’m stepping into the university I’ve been working toward—not just with ambition, but with purpose. And I’ll carry the spirit you gave 
+                         me wherever I go.</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            let slideIndex=1;
+            showSlide(slideIndex);
+            
+            // Next and Previous Control which changes the indes number of slideIndes
+            function plusSlide(n){
+                showSlide(slideIndex=slideIndex+n);
+            }
+
+            function currentSlide(n){
+                showSlide(slideIndex=n);
+            }
+
+            function showSlide(n){
+                let i=0; 
+                let slides = document.getElementsByClassName('gallery'); // its becoming slides array
+                let dots = document.getElementsByClassName('dot'); // its becoming dot array
+
+                if ( n > slides.length) {slideIndex=1}
+                if ( n < 1) {slideIndex=slides.length-1}
+
+                for (i=0; i < slides.length; i++){
+                    slides[i].style.display = "none";
+                    
+                }
+
+                for (i=0; i < dots.length; i++){
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className = dots[slideIndex-1].className + " active";
+            }
+
+
+
+
+        </script>
+
+    </body>
+</html>

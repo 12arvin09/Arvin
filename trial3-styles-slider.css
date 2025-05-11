@@ -1,0 +1,84 @@
+.autoplay-slider-container{
+   
+    height: 400px;
+    margin: auto;
+    position:relative;
+    width: 90%;
+    display: grid;
+    place-items:center;
+    overflow: hidden;
+}
+.slide-track{
+    width: calc(400px * 7);
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: left;
+    animation: scroll 20s linear infinite;
+    
+}
+
+.slide-track:hover{
+    animation-play-state: paused;
+}
+
+.slide {
+    height: 300px;
+    width: 400px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+
+}
+
+.slide-pic{
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+.slide:hover{
+    box-shadow:  0px 0px 30px rgba(14, 205, 219, 0.679);
+}
+
+.slide-text{
+    font-family: "Raleway", sans-serif;
+    color: rgb(244, 244, 142);
+    font-size: 20px;
+}
+
+.autoplay-slider-container::before, .autoplay-slider-container::after{
+    
+    content: '';
+    height:100%;
+    position: absolute;
+    width: 13%;
+    z-index: 5;
+}
+
+.autoplay-slider-container::before{
+    background: linear-gradient(to right, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0) 100%);
+    content: '';
+    top: 0;
+    left: 0;
+}
+.autoplay-slider-container::after{
+    background: linear-gradient(to left, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0) 100%);
+    content: '';
+    top: 0;
+    right: 0;
+}
+
+@keyframes scroll {
+    0%{
+        transform: translateX(0);
+    }
+    
+    100%{
+        transform: translateX(calc(-400px * 3.5));
+    }
+}
