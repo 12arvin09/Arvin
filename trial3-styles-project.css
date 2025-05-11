@@ -6,14 +6,17 @@
     gap: 20px;
     align-items: stretch;
     margin-top: 20px;
+    text-align: left;
 }
 
 .project-header-style{
-    
+
+    text-align: left;
     font-family: "Raleway";
     font-size: 50px;
-    padding-left: 30px;
     color: rgb(244, 244, 142);
+    padding-left: 30px;
+
 }
 
 .project-list{
