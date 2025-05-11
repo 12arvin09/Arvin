@@ -6,14 +6,13 @@
     gap: 20px;
     align-items: stretch;
     margin-top: 20px;
-    
 }
 
 .project-header-style{
     
     font-family: "Raleway";
     font-size: 50px;
-    
+    padding-left: 30px;
     color: rgb(244, 244, 142);
 }
 
@@ -49,7 +48,6 @@
     flex: 1;
     width: 50%;
     margin-left: -90px;
-    /* Remove margin and border */
 }
 
 .project-text{
@@ -74,7 +72,6 @@
     height: 100%;
     object-fit: cover;
     display: block;
-
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
