@@ -1,149 +1,117 @@
-.homepage {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 1200px; /* NEW */
-    margin: 0 auto;     /* NEW */
+* {
     box-sizing: border-box;
 }
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
 
-.information{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start; /*it was center;*/
-    border-style: none;
-    justify-content: center;
-    gap: 20px;
-    padding: 10px;
-    box-sizing: border-box;
-    max-width: 1200px;
-    width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        width: 100%;
+        height:  100px;
+
+        background: transparent;
+        backdrop-filter: blur(10px);
+        box-shadow: 2px 2px 20px rgba(207, 224, 53, 0.308);
+        z-index: 10;
+    }
+
+    .name {
+        flex: 1;
+        min-width: 0; 
+        overflow: hidden;
+    }
+
+    .name-edit {
+        color: rgb(244, 244, 142);
+        font-size: 55px;
+        font-family: "Raleway", sans-serif;
+        font-size: clamp(1.2rem, 5vw, 3rem);
+
+        margin-left: 10px;
+        margin-right: 10px;
+
+        text-shadow: 0 0 5px rgb(172, 188, 5);
+        white-space: nowrap; /* Force name to stay in one line */
+    }
+
+    .home,
+    .publications {
+        background-color: rgb(14, 54, 68);
+        border: none;
+        border-radius: 30px;
+
+        color: rgb(244, 244, 142);
+        font-family: "Raleway", sans-serif;
+        font-size: clamp(0.7rem, 1.4vw, 1.3rem);
+
+        min-width: 80px;
+        height: auto;
+        margin: 20px;
+
+        box-shadow: 0px 0px 20px rgba(242, 255, 0, 0.267);
+        cursor: pointer;
+        transition: 0.6s;
+    }
+
+    .home:hover,
+    .publications:hover {
+        background-color: rgb(244, 244, 142);
+        color: rgb(14, 54, 68);
+    }
+
+
+@media (max-width: 1200px) {
+    .header {
+        
+        align-items: center;
+        height: auto;
+        padding: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+       
+
+    }
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        cursor: pointer;
+        margin-left: 10px;
+
+    }
     
+    .bar {
+        height: 4px;
+        width: 30px;
+        background-color:  rgb(244, 244, 142);
+        margin: 4px 0;
+    }
+
+    .links-right {
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        gap:0px;
+        width: 100%;
+        background:transparent;
+        border-style: none;
+
+        align-items: center;
+    }
+
+    .links-right.activee {
+        display: flex;
+        background:transparent;
+        border-style: none;
+    }
 }
 
-.profile{
-    width: 600px;
-    justify-content: center;
-    align-items: center;
-}
 
-.information-biography{
-    flex: 800px;
-    justify-content: center;
-    align-items: center;
-}
 
-.skills{
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-    gap: 20px;
-    align-items: left;
- 
-}
-
-.skills-icon{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-}
-
-.skills-header{
-    margin: 0;
-    padding: 0;
-    color: #f4f48e;
-    font-family: "raleway",sans-serif;
-    font-size: 30px;
    
-}
-
-.level-header{
-    margin: 0;
-    padding: 0;
-    color: #f4f48e;
-    font-family: "raleway",sans-serif;
-    font-size: 30px;
-    
-}
-
-.skills-level{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-}
-
-@keyframes glow {
-    0% {
-    filter: drop-shadow(0 0 20px rgba(0, 238, 255,0.4));
-    }
-    50% {
-        filter: drop-shadow(0 0 30px rgba(244, 244, 142, 0.635));
-    }
-    100% {
-        filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.426));
-    }
-}
-
-.profile-pic{
-    display: block;
-    padding-top: 90px;
-
-    width: 60%;
-    margin: 0 auto ;
-    position: relative;
-    animation: glow 5s infinite;
-    z-index: 4;
-}
-
-.profile-name{
-    display: block;
-    
-    text-align: center;
-    padding-top: 40px;
-
-}
-
-.profile-name-name{
-    font-family: "Raleway",sans-serif;
-    font-size: 20px;
-    color: rgb(244, 244, 142);
-}
-
-.profile-name-card{
-    font-family: "Raleway",sans-serif;
-    font-size: 15px;
-    color: rgb(252, 252, 252);
-    line-height: 25px;
-}
-
-.icon-contact{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 40px;
-    margin-left: 55px;
-    margin-right: 55px;
-}
-
-.biography-header{
-    font-family: "Raleway", sans-serif;
-    font-size: 40px;
-    color: rgb(244, 244, 142);
-    margin-top: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
-
-}
-
-.biography-text{
-    font-family: "Raleway", sans-serif;
-    color: rgba(255, 255, 255, 0.852);
-    padding-left: 20px;
-    padding-right: 20px;
-    line-height: 30px;
-    text-align: justify;
-    font-size: 15px;
-}
-
