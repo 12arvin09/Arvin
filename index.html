@@ -82,6 +82,24 @@
 
             }
 
+            .interest-header{
+                font-family: "Raleway", sans-serif;
+                font-size: 40px;
+                color: rgb(244, 244, 142);
+                margin-top: 40px;
+                margin-left: 80px;
+            }
+            
+            .interest-text{
+                font-family: "Raleway", sans-serif;
+                color: rgba(255, 255, 255, 0.852);
+                margin-left: 80px;
+                margin-right: 80px;
+                line-height: 30px;
+                text-align: justify;
+                font-size: 15px;
+            }
+
             @media (max-width: 1200px) {
 
                 .information {
@@ -96,14 +114,13 @@
                     padding: 0 20px;
                 }
 
-                
                 .information-biography {
                     width: 90%;
                     max-width: 700px;
                     padding: 0 5px;
                     
                 }
-
+                
                 .profile{
                     width: 100%;
                     max-width: 600px;
@@ -115,6 +132,22 @@
                     margin-top: 40px;
                     text-align: center;
                     font-size: clamp(1rem, 4vw, 2rem);
+                }
+
+                .interest-header{
+                    margin-left: 0;
+                    margin-top: 40px;
+                    text-align: center;
+                    font-size: clamp(1rem, 4vw, 2rem);
+
+                }
+
+                .interest-text{
+                    
+                    margin-left: 40px;
+                    margin-right: 40px;
+                    font-size: clamp(0.9rem, 2vw, 2rem);
+               
                 }
                 .skills{
 
@@ -199,6 +232,7 @@
                     margin-left: -30px;
                     
                 }
+
 
                 .timeline-projects {
                     flex-direction: column;
@@ -400,7 +434,7 @@
 
                 
                 <div class="links-right">
-                    <a href="trial3.html"><button class="home">HOME</button></a>
+                    <a href="index.html"><button class="home">HOME</button></a>
                     <a href="publications.html"><button class="home">PUBLICATIONS</button></a>
                     <a href="CV.pdf"><button class="home">DOWNLOAD CV</button></a>
                 </div>        
@@ -459,6 +493,37 @@
                         </div>
                     </div>
                     
+                </div>
+                <div class="interest-container">
+                    <p class="interest-header">Interest : </p>
+                    <p class="interest-text">
+
+                        The first thing I look for in <span class="highlight">technology 
+                        is inclusivity.</span> We live in an era of incredible breakthroughs, 
+                        life-changing innovations and discoveries that are reshaping how we 
+                        live every day. But with each step forward, there's always a risk that 
+                        some people get left behind. That’s where I want to step in: to help 
+                        close that gap and make sure these advancements reach everyone, not just a few.
+                    </p>
+
+                    <p class="interest-text">
+                        But still, I am aspiring to do more than sharing what already exists. I want to explore 
+                        every path that technology opens up and use it to make a real impact in the 
+                        world around me. Among all areas in tech, I am especially drawn to Human-Computer 
+                        Interaction (HCI), Machine Learning (ML), and Artificial Intelligence (AI). 
+                        It’s fascinating to think about <span class="highlight">how human experiences, 
+                        limitations, and strengths can shape the way we build and interact with technology. 
+                        Then, how, in turn, tech can push us toward an even more amazing future. </span>
+                        Looking ahead, I see a whole world of ideas to explore : like virtual and 
+                        augmented reality, and the possibilities that come from combining 
+                        <span class="highlight">HCI, ML, and AI with energy-conserving component. . . </span>
+                    </p>
+                    <p class="interest-text">
+                        Imagine smart sneakers that learn from your movement and help conserve energy, 
+                        or interactive floor tiles that detect and store information about footsteps, 
+                        revealing patterns in how people move through a space . . . 
+                        My mind constantly spins with ideas like these . . .
+                    </p>
                 </div>
                 <div class="timeline-projects">
                     <div class="timeline">
@@ -535,7 +600,7 @@
                                         <p class="project-description">This paper explores the potential of brain-computer interfaces (BCIs), a key area within human-computer interaction (HCI), using non-invasive EEG technology to detect letters from brain signals. While BCIs are rarely studied in Mongolia, this project marks an early effort to bridge brain signals with technology, laying the foundation for future development in the field.</p>
                                     </div>
                                 </div>
-                                <div class="project" onclick="location.href='startup.html'">
+                                <div class="project" onclick="location.href='projectcane.html'">
                                     <div class="project-image-container">
                                         <img class="project-pic" src="project/smartcane/smartcane1.jpg">
                                     </div>
@@ -544,7 +609,7 @@
                                         <p class="project-description">This paper presents the first version of a smart cane designed to support visually impaired individuals, addressing key challenges such as water, obstacle, and hole detection. Using five infrared sensors and a water sensor controlled by a microcontroller, the cane identifies various obstacles and provides real-time audio feedback. Developed in response to limited infrastructure and slow IoT progress, this project marks an early step toward improving accessibility for visually impaired users.</p>
                                     </div>
                                 </div>
-                                <div class="project" onclick="location.href='startup.html'">
+                                <div class="project" onclick="location.href='projectbackpack.html'">
                                     <div class="project-image-container">
                                         
                                         <img class="project-pic" src="project/smartbp/smartbp1.jpg"> 
@@ -558,11 +623,11 @@
                         </div>
                     </div>
                 </div>
-                <p class="slide-header">Been Part of</p>
+                <p class="slide-header">Snapshots of My Past</p>
                 <div class="autoplay-slider-container">
                     <div class="slide-track">
                         <div onclick="location.href='ondospace.html'" class="slide">
-                            <img class="slide-pic" src="ondospace/os1.JPG">
+                            <img class="slide-pic" src="tomujin/AA70052E-77E2-4125-9374-8E34ACCBADD3 2.jpg">
                             <p class="slide-text">At OndoSpace</p>
                         </div>
                         <div onclick="location.href='tomujin.html'" class="slide">
@@ -571,23 +636,35 @@
                         </div>
                         <div onclick="location.href='class.html'" class="slide">
                             <img class="slide-pic" src="class/class1.JPG">
-                            <p></p>
+                            <p class="slide-text">With my dear Classmates</p>
+                        </div>
+                        <div onclick="location.href='startup.html'" class="slide">
+                            <img class="slide-pic" src="startup/4-up on 11-22-24 at 6.11 PM (compiled).jpg">
+                            <p class="slide-text">Projects</p>
+                        </div>
+                        <div onclick="location.href='government.html'" class="slide">
+                            <img class="slide-pic" src="gov/gov6.jpg">
+                            <p class="slide-text">With Beloved Physics Students</p>
                         </div>
                         <div onclick="location.href='content.html'" class="slide">
-                            <img class="slide-pic" src="content/con3.png">
-                            <p></p>
+                            <img class="slide-pic" src="content/con8.jpg">
+                            <p class="slide-text">Snapshot of my contents</p>
                         </div>
-                        <div class="slide">
-                            <img class="slide-pic" src="ondospace/os5.JPG">
-                            <p></p>
+                        <div onclick="location.href='class.html'" class="slide">
+                            <img class="slide-pic" src="class/IMG_8249.JPG">
+                            <p class="slide-text">Our Class | Graduation Day</p>
                         </div>
-                        <div class="slide">
-                            <img class="slide-pic" src="ondospace/os6.JPG">
-                            <p></p>
-                        </div>
-                        <div class="slide">
+                        <div onclick="location.href='ondospace.html'" class="slide">
                             <img class="slide-pic" src="ondospace/os7.JPG">
-                            <p></p>
+                            <p class="slide-text">Budee ah doing his work</p>
+                        </div>
+                        <div onclick="location.href='tomujin.html'" class="slide">
+                            <img class="slide-pic" src="content/con1.jpg">
+                            <p class="slide-text">Teaching Math</p>
+                        </div>
+                        <div onclick="location.href='government.html'" class="slide">
+                            <img class="slide-pic" src="gov/gov11.jpg">
+                            <p class="slide-text">With amazing physics olympiad students | Front of National University Mongolia</p>
                         </div>
                     </div>
                 </div>
