@@ -109,7 +109,7 @@
 
                 
                 <div class="links-right">
-                    <a href="index.html"><button class="home">HOME</button></a>
+                    <a href="trial3.html"><button class="home">HOME</button></a>
                     <a href="publications.html"><button class="home">PUBLICATIONS</button></a>
                     <a href="CV.pdf"><button class="home">DOWNLOAD CV</button></a>
                 </div>        
@@ -171,14 +171,31 @@
                     </div>
                 </div>
                 <div class="activity-description">
-                    <p class="activity-description-text">After spending six incredible months at this amazing place, I'm finally beginning to feel the impact of my second gap year. 
-                        People often say, "Hurry up and learn." But I’ve come to realize something deeper. Rather than pretending to be someone who never wastes time but fills their head with knowledge they don’t truly understand, 
-                        I want to become someone who is consciously shaping their future—someone who overcomes challenges, finds joy in the process, and uses the opportunities available to young people with clarity and purpose. 
-                        On this journey, I found ONDOSPACE. Before this, the word "engineer" was just a title to me—something that sounded powerful but meant little beyond that. I didn’t know what engineers actually did, how they built 
-                        things, or why they did it. But since joining ONDOSPACE on December 12th, I've started to move away from pretending to know everything and toward truly filling in the gaps of what I don’t know. I’m deeply grateful 
-                        to the mentors—those older brothers and sisters—who welcomed me without judgment. You never labeled me as “empty.” Instead, you reflected on even my smallest actions with care, and gave me encouragement, knowledge,
-                         and inspiration that I will carry forward. With everything I’ve gained here, I’m stepping into the university I’ve been working toward—not just with ambition, but with purpose. And I’ll carry the spirit you gave 
-                         me wherever I go.</p>
+                    <p class="activity-description-text">In this project, I tried to build a 
+                        <span class="highlight">Brain-Computer Interface headset that detects 
+                            letters people are thinking</span>, using their brainwaves. I used 
+                            an EEG sensor-based approach because it's non-invasive and can read
+                            signals through contact with the scalp. Since buying a ready-made OpenBCI
+                            headset from the official store was way too expensive, I tried to 
+                            create it on a low budget here in Mongolia. Fortunately, all of this 
+                            became <span class="highlight">possible thanks to the amazing engineer 
+                            brothers and mentors at ONDOSPACE.</span>The EEG sensors were brought 
+                            from the OpenBCI store, and the headset was 3D printed using open-source 
+                            files from OpenBCI’s GitHub, with the help of engineer Mr. Budragchaa. 
+                            The Cyton board was printed in Shenzhen, thanks to Mr. Tsolmon Yadmaa’s 
+                            help. For the software, I used OpenViBE instead of OpenBCI’s official app. 
+                            I focused on the <span class="highlight">P300 speller method</span>, 
+                            where users look at flashing letters in a grid. When the target letter 
+                            flashes, the brain gives off a signal called the P300 wave. The system 
+                            reads those waves, learns the patterns, and <span class="highlight">tries 
+                            to match the letter you're focusing on</span>.In the end, the accuracy 
+                            improved from 72% to 82% after a lot of training and repeating the process. 
+                            Even <span class="highlight">though it’s TRULY far from accurate</span>, 
+                            I’m honestly happy for the result. I had many limitations, both in tools 
+                            and in my own knowledge. But building something that responds to brain signals 
+                            <span class="highlight">gave me a whole new sense of what’s possible.   
+                            </span>It made me want to keep going, keep learning, and see <span class="highlight">
+                                how far this connection between mind and machine can go.</span></p>
                 </div>
         </div>
         <div class="container">
@@ -223,7 +240,7 @@
         showSlide(slideIndex);
 
         function plusSlide(n){
-            showSlide(slideIndex =  slideIndex + 1);
+            showSlide(slideIndex =  slideIndex + n);
         }
 
         function currentSlide(n){
