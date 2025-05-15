@@ -33,11 +33,12 @@
         font-family: "Raleway", sans-serif;
         font-size: clamp(1.2rem, 5vw, 3rem);
 
-        margin-left: 10px;
+        margin-left: 80px;
         margin-right: 10px;
 
         text-shadow: 0 0 5px rgb(172, 188, 5);
-        white-space: nowrap; /* Force name to stay in one line */
+        white-space: nowrap; 
+        text-decoration-line: none;
     }
 
     .home,
