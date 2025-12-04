@@ -100,6 +100,38 @@
                 font-size: 15px;
             }
 
+            /* Video section shown near Interest */
+            .interest-video-container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 30px 80px;
+                gap: 24px;
+            }
+
+            .interest-video{
+                width: 100%;
+                max-width: 900px;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 6px 30px rgba(14,205,219,0.08);
+                background: #000;
+            }
+
+            .interest-video video{
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            .video-caption{
+                font-family: "Raleway", sans-serif;
+                color: rgba(255,255,255,0.9);
+                text-align: center;
+                margin-top: 8px;
+                font-size: 14px;
+            }
+
             @media (max-width: 1200px) {
 
                 .information {
@@ -140,6 +172,10 @@
                     text-align: center;
                     font-size: clamp(1rem, 4vw, 2rem);
 
+                }
+
+                .interest-video-container{
+                    margin: 20px 40px;
                 }
 
                 .interest-text{
@@ -391,6 +427,133 @@
                 text-shadow: 0 0 10px rgb(55, 59, 7);
                 font-style: italic;
             }
+
+            /*  Ribbon */
+            .ribbon-frame {
+                position: absolute;
+                top: 210px;
+                left: 40px;
+                width: 10vw;
+                height: 40px;
+                
+                background: linear-gradient(90deg, rgba(14, 205, 219, 0.8) 0%, rgba(244, 244, 142, 0.8) 100%);
+                
+                transform-origin: left top;
+                z-index: 100;
+                box-shadow: 0 0 15px rgba(14, 205, 219, 0.6);
+                cursor: pointer;
+                overflow: visible;
+                
+            }
+
+            .ribbon-link {
+                display: block;
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                color: rgb(0, 0, 0);
+                font-weight: 600;
+                letter-spacing: 1px;
+                font-family: "Raleway", sans-serif;
+            }
+
+            .ribbon-link:hover {
+                box-shadow: 0 0 25px rgba(14, 205, 219, 0.9), 0 0 15px rgba(244, 244, 142, 0.7);
+            }
+
+            /* Splash Screen Styles */
+            .splash-screen {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: 
+                    radial-gradient(ellipse at center, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 30%, transparent 70%),
+                    linear-gradient(135deg, rgba(14, 205, 219, 0.4) 0%, transparent 30%, transparent 70%, rgba(244, 244, 142, 0.4) 100%);
+                background-color: rgb(0, 0, 0);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+                cursor: pointer;
+                overflow: hidden;
+            }
+
+            .splash-screen.hidden {
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.8s ease-out;
+            }
+
+            .splash-content {
+                text-align: center;
+                font-family: "Raleway", sans-serif;
+                position: relative;
+            }
+
+            .splash-text {
+                font-size: clamp(2rem, 8vw, 4rem);
+                color: rgb(244, 244, 142);
+                font-weight: 300;
+                letter-spacing: 3px;
+                margin: 0;
+                line-height: 1.3;
+                text-shadow: 0 0 20px rgba(14, 205, 219, 0.6);
+            }
+
+            .splash-char {
+                display: inline-block;
+                animation: smoothBounce 2s ease-in-out infinite;
+            }
+
+            /* All characters bounce together, not staggered */
+            .splash-char:nth-child(n) { animation-delay: 0s; }
+
+            @keyframes smoothBounce {
+                0%, 100% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+                50% {
+                    transform: translateY(-40px);
+                    opacity: 1;
+                }
+            }
+
+            .splash-subtitle {
+                font-size: clamp(1rem, 3vw, 1.5rem);
+                color: rgba(14, 205, 219, 0.8);
+                margin-top: 20px;
+                letter-spacing: 2px;
+                font-weight: 300;
+                animation: fadeInPulse 2s ease-in-out infinite;
+            }
+
+            @keyframes fadeInPulse {
+                0%, 100% { opacity: 0.6; }
+                50% { opacity: 1; }
+            }
+
+            .splash-tap-hint {
+                position: absolute;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 14px;
+                color: rgba(255, 255, 255, 0.5);
+                animation: slideUp 1s ease-in-out infinite;
+            }
+
+            @keyframes slideUp {
+                0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+                50% { transform: translateX(-50%) translateY(-10px); opacity: 1; }
+            }
         </style>
 <!--
         <script> 
@@ -420,6 +583,15 @@
                 padding-top: 100px;
     margin-left:0;
     margin-right:0;">
+        <!-- Splash Screen with Bouncy Text -->
+        <div class="splash-screen" id="splashScreen">
+            <div class="splash-content">
+                <p class="splash-text" id="splashText"></p>
+                <p class="splash-subtitle">Welcome to my hub</p>
+                <p class="splash-tap-hint">✦ Tap anywhere to continue ✦</p>
+            </div>
+        </div>
+
         <div class="full-homepage">
             <div class="header">
                 <div class="name">
@@ -434,11 +606,17 @@
 
                 
                 <div class="links-right">
-                    <a href="index.html"><button class="home">HOME</button></a>
+                    <!-- Diagonal Ribbon Frame Line -->
+                    
+                    <a href="https://careers.microsoft.com/v2/global/en/exploremicrosoft"><button class="home">Position Link</button></a>
+                    <a href="trial3.html"><button class="home">HOME</button></a>
+                    <a href="Resume.pdf"><button class="home">DOWNLOAD CV</button></a>
                     <a href="publications.html"><button class="home">PUBLICATIONS</button></a>
                     
                 </div>        
             </div>
+            
+            
             </div>
                 <div class="homepage">
                     <div class="information">
@@ -448,14 +626,15 @@
                             </div>
                             <div class="profile-name"> <!-- due to this so many divs i created, arvian ur head was confusin all this up aaaahhhh-->
                                 <p class="profile-name-name">Arvin Munkh-Ochir</p>
-                                <p class="profile-name-card">Aspiring Computer Scientist | IoT & Human-Centered Tech Enthusiast</p>
+                                <p class="profile-name-card">Aspiring Computer Scientist  </p>
+                                <p class="profile-name-card">Computer Vision, AI, and Data-Driven Systems Enthusiast</p>
                             </div>
                             <div class="icon-contact">
                                 <button class="icon-contact-button" onclick="location.href='https://www.facebook.com/amanda.alex.5686/'"><i class="fa-brands fa-facebook" style="color: #f4f48e;"></i></button>
                                 <button class="icon-contact-button" onclick="location.href='https://www.instagram.com/arvinamunku/'"><i class="fa-brands fa-instagram" style="color: #f4f48e;"></i></button>
                                 <button class="icon-contact-button" onclick="location.href='https://www.linkedin.com/in/arvin-munkh-ochir-96416295/'"><i class="fa-brands fa-linkedin-in" style="color: #f4f48e;"></i></button>
                                 <button class="icon-contact-button" onclick="location.href='https://www.youtube.com/@HamtdaaBodoy'"><i class="fa-brands fa-youtube" style="color: #f4f48e;"></i></button>
-                                <button class="icon-contact-button" <!-- onclick="location.href='https://github.com/12arvin09'" --> ><i class="fa-brands fa-github" style="color: #f4f48e;"></i></button>
+                                <button class="icon-contact-button" onclick="location.href='https://github.com/12arvin09'"><i class="fa-brands fa-github" style="color: #f4f48e;"></i></button>
                                 
                             </div>
                         </div>
@@ -465,14 +644,21 @@
                             </p>
 
                             <p class="biography-text">
-                                I am an aspiring computer scientist with a growing interest in building intelligent, human-centered technologies. 
+                                <!--I am Arvin Munkh-Ochir, an aspiring computer scientist with a growing interest in building intelligent, human-centered technologies. 
                                 My interests lie in the fields of <span class="highlight">IoT, HCI, Artificial Intelligence, and Machine Learning</span>, and I look forward to learn 
                                 more deep into these areas in the years coming. From a young age, I have been an passionate learner of <span class="highlight">physics and computer science</span>. 
                                 This curiosity led me to explore technologies from both the hardware and software sides, inspiring me to contribute meaningfully 
                                 to these fields. After graduating high school in 2023, I was fortunate to gain <span class="highlight">early hands-on experience at ONDOspace LLC</span>, a 
                                 leading IoT company in Mongolia. This opportunity gave me a real-world perspective on how technology is built and motivated me to 
                                 work on my own self-initiated projects. I have experience with languages such as Rust (and Embedded Rust), Lua (and LuatOS), Python,
-                                C++, C, CSS, JavaScript, and HTML. <span class="highlight">Please explore the rest of my experience through the sections below by clicking on it</span>.
+                                C++, C, CSS, JavaScript, and HTML. <span class="highlight">Please explore the rest of my experience through the sections below by clicking on it</span>.-->
+                                I’m Arvin Munkh-Ochir, a freshman in Computer Science at SUNY Korea (Stony Brook University Korea campus), passionate about bridging hardware and software to create intelligent, accessible technologies.
+                                Over the past few years, I have gained experience in different layers of computing, from embedded systems and circuit design to AI-driven software and full-stack development. My technical foundation grew through hands-on experiences at ONDOSpace, where I worked with 9-axis IMU sensors (BMX160, ICM-20498), and through personal and startup projects integrating IoT, BCI computing, and front-end developments.
+                                I’ve worked across:<br>
+                                <span class="highlight">• Programming: Java, Python, C/C++, Rust, JavaScript, HTML, CSS</span><br>
+                                <span class="highlight">• Hardware: STM32, ESP32, Air780G, BMX160</span><br>
+                                <span class="highlight">• Software: React, Next.js, OpenVibe</span><br>
+                                My focus lies at the intersection of AI, embedded intelligence, and computer vision to build systems that not only compute faster but also adapt to human and environmental contexts.
                             </p>
                                 
                             <div class="skills">
@@ -495,8 +681,8 @@
                     
                 </div>
                 <div class="interest-container">
-                    <p class="interest-header">Interest : </p>
-                    <p class="interest-text">
+                    <p class="interest-header">Who Really I am : </p>
+                    <!--<p class="interest-text">
 
                         The first thing I look for in <span class="highlight">technology 
                         is inclusivity.</span> We live in an era of incredible breakthroughs, 
@@ -507,7 +693,7 @@
                     </p>
 
                     <p class="interest-text">
-                        But still, I am aspiring to do more than just being bridge. I want to explore 
+                        But still, I am aspiring to do more than sharing these techological fields. I want to explore 
                         every path that technology opens up and use it to make a real impact in the 
                         world around me. Among all areas in tech, I am especially drawn to Human-Computer 
                         Interaction (HCI), Machine Learning (ML), and Artificial Intelligence (AI). 
@@ -519,12 +705,54 @@
                         <span class="highlight">HCI, ML, and AI with energy-conserving component. . . </span>
                     </p>
                     <p class="interest-text">
-                        Imagine smart sneakers that learn from your movement and help conserve energy through piezoelectric, 
+                        Imagine smart sneakers that learn from your movement and help conserve energy, 
                         or interactive floor tiles that detect and store information about footsteps, 
-                        revealing patterns in how people move through a space or more different analysis . . .
+                        revealing patterns in how people move through a space . . . 
                         My mind constantly spins with ideas like these . . .
-                    </p>
+                    </p> -->
                 </div>
+                <!-- Video inserted near Interest section -->
+                <div class="interest-video-container">
+                    <div class="interest-video" id="videoPlayer" style="position: relative; cursor: pointer;">
+                        <img id="videoThumbnail" src="image/El.png" alt="Video thumbnail" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+                        <div id="playButton" class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background-color: rgba(244, 244, 142, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 30px rgba(14,205,219,0.3);">
+                            <i class="fa-solid fa-play" style="color: #000; font-size: 40px; margin-left: 8px;"></i>
+                        </div>
+                        <video id="videoElement" style="width: 100%; height: auto; display: none; border-radius: 12px;" controls playsinline preload="metadata">
+                            <source src="videos/1030.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <script>
+                    function hidePlayButton() {
+                        document.getElementById('playButton').style.display = 'none';
+                    }
+
+                    function hideThumbnail() {
+                        document.getElementById('videoThumbnail').style.display = 'none';
+                    }
+
+                    function showVideo() {
+                        document.getElementById('videoElement').style.display = 'block';
+                    }
+
+                    function playVideo() {
+                        document.getElementById('videoElement').play();
+                    }
+
+                    function initVideoPlayer() {
+                        document.getElementById('videoPlayer').addEventListener('click', function() {
+                            hidePlayButton();
+                            hideThumbnail();
+                            showVideo();
+                            playVideo();
+                        });
+                    }
+
+                    initVideoPlayer();
+                </script>
                 <div class="timeline-projects">
                     <div class="timeline">
                         <div class="timeline-items">
@@ -576,7 +804,7 @@
                                 <h3 class="item-role">Advanced Physics Teacher</h3>
                                 <p class="item-organization">Project "SPENUM" by the Ministry of Education and Science of Mongolia</p>
                             </div>
-                            <div class="item" onclick="location.href='class.html'">
+                            <div class="item">
                                 <a href="https://www.youtube.com/@nasnii23b7" target="_blank">
                                     <img class="icons" src="icons/class23b.jpg" alt="Ondospace Logo">
                                 </a>
@@ -591,7 +819,7 @@
                         <p class="project-header-style">Projects</p>
                         
                         <div class="project-list">
-                            <div class="project" onclick="location.href='projectbci.html'">
+                                <div class="project" onclick="location.href='projectbci.html'">
                                     <div class="project-image-container">
                                         <img class="project-pic" src="project/bci/bci1.jpg"> 
                                     </div>
@@ -648,7 +876,7 @@
                 <div class="autoplay-slider-container">
                     <div class="slide-track">
                         <div onclick="location.href='ondospace.html'" class="slide">
-                            <img class="slide-pic" src="ondospace/refined.jpg">
+                            <img class="slide-pic" src="tomujin/AA70052E-77E2-4125-9374-8E34ACCBADD3 2.jpg">
                             <p class="slide-text">At OndoSpace</p>
                         </div>
                         <div onclick="location.href='tomujin.html'" class="slide">
@@ -660,7 +888,7 @@
                             <p class="slide-text">With my dear Classmates</p>
                         </div>
                         <div onclick="location.href='startup.html'" class="slide">
-                            <img class="slide-pic" src="startup/bcihead.jpg">
+                            <img class="slide-pic" src="startup/4-up on 11-22-24 at 6.11 PM (compiled).jpg">
                             <p class="slide-text">Projects</p>
                         </div>
                         <div onclick="location.href='government.html'" class="slide">
@@ -676,7 +904,7 @@
                             <p class="slide-text">Our Class | Graduation Day</p>
                         </div>
                         <div onclick="location.href='ondospace.html'" class="slide">
-                            <img class="slide-pic" src="ondospace/os7.jpg">
+                            <img class="slide-pic" src="ondospace/os7.JPG">
                             <p class="slide-text">Budee ah doing his work</p>
                         </div>
                         <div onclick="location.href='tomujin.html'" class="slide">
@@ -699,4 +927,40 @@
     </body>
 
     <script src="navigation.js"></script>
+    <script>
+        // Splash Screen Logic with Smooth Bouncy Text
+        document.addEventListener('DOMContentLoaded', function() {
+            const splashScreen = document.getElementById('splashScreen');
+            const splashText = document.getElementById('splashText');
+            const textContent = 'Hello I am Arvin Munkh-Ochir';
+
+            // Create animated characters - all bounce together
+            textContent.split('').forEach(char => {
+                const span = document.createElement('span');
+                span.className = 'splash-char';
+                span.textContent = char === ' ' ? '\u00A0' : char; // Non-breaking space
+                splashText.appendChild(span);
+            });
+
+            // Function to hide splash screen
+            function hideSplash() {
+                splashScreen.classList.add('hidden');
+                setTimeout(() => {
+                    splashScreen.style.display = 'none';
+                }, 800);
+            }
+
+            // Hide on any user interaction (click, touch, keyboard)
+            document.addEventListener('click', hideSplash, { once: true });
+            document.addEventListener('touchstart', hideSplash, { once: true });
+            document.addEventListener('keydown', hideSplash, { once: true });
+
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                if (!splashScreen.classList.contains('hidden')) {
+                    hideSplash();
+                }
+            }, 5000);
+        });
+    </script>
 </html>
