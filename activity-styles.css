@@ -338,6 +338,8 @@ body{
     margin: 0;
     padding-left: 0;
     padding-right: 0;
+    overflow-x: hidden;   /* stop the fixed header / wide rows from spilling sideways on phones,
+                             which had been pushing the open menu's PUBLICATIONS link off-screen */
 }
 
 /* Ambient tech-grid backdrop, fixed so it stays put while scrolling.

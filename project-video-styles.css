@@ -18,9 +18,15 @@
 .gallery {
     position: relative;
     width: 100%;
-    padding-bottom: 56% ; /* 16:9 ratio */
-    margin-top: 30px;
+    padding-bottom: 60% ;
+    margin-top: 0;
     height: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(14, 205, 219, 0.10), transparent 70%),
+        #05090c;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(0, 0, 0, 0.55);
 }
 
 video {
@@ -29,7 +35,8 @@ video {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;   /* show the whole frame — clips are a mix of portrait and landscape */
+    background: #05090c;
 }
 .pic{
     width: 100%;
@@ -334,6 +341,7 @@ video {
 html,
 body{
     margin: 0;
+    overflow-x: hidden;
 }
 
 /* Ambient tech-grid backdrop, fixed like a starfield; the inline
@@ -402,18 +410,33 @@ body{
     margin-top: 18px;
 }
 
-/* Framed media gallery */
+/* Framed media gallery — bezel around a recessed screen */
 .gallery-container{
-    border: 1px solid rgba(14, 205, 219, 0.2);
-    border-radius: 16px;
+    padding: 14px;
+    border: 1px solid rgba(14, 205, 219, 0.22);
+    border-radius: 22px;
     overflow: hidden;
-    box-shadow: 0 6px 30px rgba(14, 205, 219, 0.12);
-    transition: border-color 0.35s ease, box-shadow 0.35s ease;
+    background: linear-gradient(160deg, rgba(14, 54, 68, 0.55), rgba(3, 12, 17, 0.7));
+    box-shadow:
+        0 24px 60px -22px rgba(0, 0, 0, 0.85),
+        0 8px 30px rgba(14, 205, 219, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
 }
 
 .gallery-container:hover{
-    border-color: rgba(14, 205, 219, 0.45);
-    box-shadow: 0 10px 40px rgba(14, 205, 219, 0.22);
+    border-color: rgba(14, 205, 219, 0.5);
+    box-shadow:
+        0 28px 70px -22px rgba(0, 0, 0, 0.9),
+        0 12px 44px rgba(14, 205, 219, 0.26),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 600px){
+    .gallery-container{
+        padding: 9px;
+        border-radius: 16px;
+    }
 }
 
 /* Slide counter as a small chip on the media, not a black band above it */
@@ -460,14 +483,19 @@ body{
     color: var(--color-accent);
 }
 
-.prev{ left: 12px; }
-.next{ right: 12px; }
+.prev{ left: 24px; }
+.next{ right: 24px; }
 
 .prev:hover,
 .next:hover{
     background: rgba(14, 205, 219, 0.85);
     color: rgb(2, 8, 12);
     box-shadow: 0 0 20px rgba(14, 205, 219, 0.7);
+}
+
+@media (max-width: 600px){
+    .prev{ left: 16px; }
+    .next{ right: 16px; }
 }
 
 /* Related-report cards at the foot of the page */
