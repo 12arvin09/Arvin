@@ -23,30 +23,73 @@
 
 .profile{
     width: 600px;
-    justify-content: center;
-    align-items: center;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 32px 28px 28px;
+    background: linear-gradient(160deg, rgba(14, 54, 68, 0.55), rgba(6, 20, 26, 0.35));
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    border: 1px solid rgba(14, 205, 219, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(14, 205, 219, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.profile:hover{
+    border-color: rgba(14, 205, 219, 0.45);
+    box-shadow: 0 14px 50px rgba(14, 205, 219, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .information-biography{
     flex: 800px;
-    justify-content: center;
-    align-items: center;
+    box-sizing: border-box;
+    padding: 28px 32px;
+    background: linear-gradient(160deg, rgba(14, 54, 68, 0.4), rgba(6, 20, 26, 0.25));
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    border: 1px solid rgba(244, 244, 142, 0.18);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .skills{
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
     gap: 20px;
-    align-items: left;
- 
+    align-items: flex-start;
+    margin-top: 10px;
 }
 
 .skills-icon{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 20px;
+    gap: 14px;
+}
+
+.skills-icon i,
+.skills-icon img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(244, 244, 142, 0.18);
+    object-fit: contain;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skills-icon i:hover,
+.skills-icon img:hover{
+    transform: translateY(-4px) scale(1.08);
+    border-color: rgba(14, 205, 219, 0.55);
+    background: rgba(14, 205, 219, 0.1);
+    box-shadow: 0 8px 20px rgba(14, 205, 219, 0.28);
 }
 
 .skills-header{
@@ -55,7 +98,18 @@
     color: #f4f48e;
     font-family: "raleway",sans-serif;
     font-size: 30px;
-   
+    position: relative;
+    display: inline-block;
+}
+
+.skills-header::after{
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    margin-top: 6px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--color-cyan, rgb(14, 205, 219)), var(--color-accent, rgb(244, 244, 142)));
 }
 
 .level-header{
@@ -88,7 +142,10 @@
 
 .profile-pic{
     display: block;
-    padding-top: 90px;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 3px solid rgba(14, 205, 219, 0.35);
 
     width: 60%;
     margin: 0 auto ;
@@ -99,9 +156,9 @@
 
 .profile-name{
     display: block;
-    
+
     text-align: center;
-    padding-top: 40px;
+    padding-top: 24px;
 
 }
 
@@ -131,17 +188,25 @@
     font-family: "Raleway", sans-serif;
     font-size: 40px;
     color: rgb(244, 244, 142);
-    margin-top: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-top: 0;
+    padding: 0;
+}
 
+.biography-header::after{
+    content: '';
+    display: block;
+    width: 64px;
+    height: 3px;
+    margin-top: 8px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--color-cyan, rgb(14, 205, 219)), var(--color-accent, rgb(244, 244, 142)));
 }
 
 .biography-text{
     font-family: "Raleway", sans-serif;
     color: rgba(255, 255, 255, 0.852);
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0;
+    margin-top: 20px;
     line-height: 30px;
     text-align: justify;
     font-size: 15px;

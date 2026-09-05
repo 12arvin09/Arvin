@@ -16,7 +16,20 @@
     font-size: 50px;
     color: rgb(244, 244, 142);
     padding-left: 30px;
+    position: relative;
+    display: inline-block;
 
+}
+
+.project-header-style::after{
+    content: '';
+    display: block;
+    width: 72px;
+    height: 4px;
+    margin-top: 10px;
+    margin-left: 30px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, rgb(14, 205, 219), rgb(244, 244, 142));
 }
 
 .project-list{
@@ -34,23 +47,36 @@
     flex-direction: row;
     color: rgb(244, 244, 142);
     font-family: "Raleway";
-    border: none;
+    background: rgba(14, 54, 68, 0.25);
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+    border: 1px solid rgba(14, 205, 219, 0.2);
     border-radius: 20px;
-    box-shadow:  0px 0px 30px rgba(14, 205, 219, 0.41);
+    box-shadow:  0px 0px 30px rgba(14, 205, 219, 0.2);
     overflow: hidden; /* ensures child elements respect the parent's rounded border */
     cursor: pointer;
-    transition: 0.7s;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project:hover{
-    background-color: rgba(14, 205, 219, 0.136);
-    
+    background: rgba(14, 205, 219, 0.14);
+    border-color: rgba(14, 205, 219, 0.5);
+    box-shadow: 0px 10px 40px rgba(14, 205, 219, 0.4);
+    transform: translateY(-6px);
+}
+
+.project-pic{
+    transition: transform 0.5s ease;
+}
+
+.project:hover .project-pic{
+    transform: scale(1.06);
 }
 
 .project-image-container {
     flex: 1;
     width: 50%;
-    margin-left: -90px;
+    overflow: hidden;
 }
 
 .project-text{

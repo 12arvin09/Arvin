@@ -7,6 +7,7 @@
     --color-accent-glow: rgba(244, 244, 142, 0.35);
     --color-navy: rgb(14, 54, 68);
     --color-cyan: rgb(14, 205, 219);
+    --color-cyan-glow: rgba(14, 205, 219, 0.45);
     --font-main: "Raleway", sans-serif;
     --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -58,32 +59,49 @@
 
     .home,
     .publications {
-        background-color: var(--color-navy);
-        border: 1px solid rgba(244, 244, 142, 0.4);
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        background: linear-gradient(135deg, rgba(14, 205, 219, 0.32), rgba(14, 54, 68, 0.55));
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        border: 1px solid rgba(14, 205, 219, 0.55);
         border-radius: 30px;
 
         color: var(--color-accent);
         font-family: var(--font-main);
         font-size: clamp(0.7rem, 1.4vw, 1.3rem);
+        font-weight: 600;
 
         min-width: 80px;
         height: auto;
         margin: 20px;
         padding: 12px 26px;
-        letter-spacing: 0.02em;
+        letter-spacing: 0.04em;
 
-        box-shadow: 0 0 20px rgba(242, 255, 0, 0.267);
+        box-shadow: 0 4px 24px rgba(14, 205, 219, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 -12px 20px -14px rgba(0, 0, 0, 0.4);
         cursor: pointer;
         transition: var(--transition-smooth);
     }
 
+    /* specular highlight sweeping the glass surface */
+    .home::before,
+    .publications::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(115deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 30%);
+        opacity: 0.8;
+    }
+
     .home:hover,
     .publications:hover {
-        background-color: var(--color-accent);
-        color: var(--color-navy);
-        border-color: var(--color-accent);
+        background: linear-gradient(135deg, rgba(14, 205, 219, 0.5), rgba(14, 54, 68, 0.65));
+        color: var(--color-accent);
+        border-color: rgba(14, 205, 219, 0.9);
         transform: translateY(-3px) scale(1.04);
-        box-shadow: 0 10px 30px var(--color-accent-glow), 0 0 40px rgba(14, 205, 219, 0.25);
+        box-shadow: 0 10px 34px var(--color-cyan-glow), inset 0 1px 0 rgba(255, 255, 255, 0.35);
     }
 
     .home:active,

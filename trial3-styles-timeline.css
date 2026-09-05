@@ -20,28 +20,34 @@
 
 .item{
 
-    border-radius: 10px;
-    background-color: rgba(14, 205, 219, 0.217);
+    border-radius: 14px;
+    background: linear-gradient(160deg, rgba(14, 205, 219, 0.16), rgba(14, 54, 68, 0.28));
+    backdrop-filter: blur(10px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+    border: 1px solid rgba(14, 205, 219, 0.25);
     text-align: start;
     color: rgb(244, 244, 142);
     font-family: "Raleway";
-    box-shadow:  0px 0px 20px rgba(14, 205, 219, 0.41);
+    box-shadow: 0 8px 26px rgba(14, 205, 219, 0.18);
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+    padding: 4px 0 14px;
 
     margin-left: 90px;
 }
 
 .item:hover{
-    
-    background-color: rgba(14, 205, 219, 0.17);
-    padding-bottom: 10px;
+    background: linear-gradient(160deg, rgba(14, 205, 219, 0.26), rgba(14, 54, 68, 0.4));
+    border-color: rgba(14, 205, 219, 0.55);
+    box-shadow: 0 12px 36px rgba(14, 205, 219, 0.32);
+    transform: translateX(6px);
 }
 
 .item-role{
     margin-left: 30px;
     text-decoration: underline;
+    text-underline-offset: 3px;
     color: rgb(244, 244, 142);
 
 }
@@ -53,17 +59,12 @@
 }
 
 .item-description{
-    
-    margin-left: 30px;
-    color: rgba(244, 244, 142, 0.78);
-}
 
-.project{
-    flex:1;
-    padding-left: 200px;
-    text-align: left;
-    
-    padding-left: 90px;
+    margin-left: 30px;
+    color: rgba(14, 205, 219, 0.9);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-size: 12px;
 }
 
 .experience{
@@ -74,19 +75,32 @@
     color: rgb(244, 244, 142);
 }
 
+.experience::after{
+    content: '';
+    display: block;
+    width: 72px;
+    height: 4px;
+    margin-top: 10px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, rgb(14, 205, 219), rgb(244, 244, 142));
+}
+
 .icons{
     width: 60px;
+    height: 60px;
+    object-fit: cover;
     border-radius: 50%;
     position: absolute;
     left: -25px;
     top: -30px;
     border-style: solid;
-    border-color: rgba(16, 52, 54, 0.679);
+    border-color: rgba(14, 205, 219, 0.5);
     box-shadow:  0px 0px 20px rgba(14, 205, 219, 0.51);
-    border-width: 1px;
+    border-width: 2px;
+    background: rgb(6, 20, 26);
     z-index: 9;
     cursor: pointer;
-    transition:0.4s;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .timeline-items::after{
@@ -94,7 +108,7 @@
     position: absolute;
     width: 2px;
     height: 80%;
-    background: rgb(244, 244, 142);
+    background: linear-gradient(180deg, rgb(14, 205, 219), rgb(244, 244, 142));
     box-shadow:  0px 0px 20px rgba(14, 205, 219, 0.739);
     left:70px;
     top: 200px;
@@ -107,13 +121,16 @@
     border-radius: 50%;
     height: 10px;
     background: rgb(14, 205, 219);
+    box-shadow: 0 0 12px rgba(14, 205, 219, 0.8);
     bottom: 70px;
     left: -85px;
     z-index: 0;
 }
 
 .icons:hover{
-    width:62px;
+    width:66px;
+    height: 66px;
     z-index: 8;
-    box-shadow:  0px 0px 20px rgb(244, 244, 142, 0.51);
+    border-color: rgba(244, 244, 142, 0.8);
+    box-shadow:  0px 0px 24px rgb(244, 244, 142, 0.51);
 }

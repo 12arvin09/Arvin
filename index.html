@@ -28,13 +28,34 @@
                 box-sizing: border-box;
             }
 
+            /* Ambient tech-grid backdrop carried over from the splash screen,
+               fixed so it stays put like a starfield as the page scrolls. */
+            body {
+                background-color: rgb(2, 8, 12);
+                background-image:
+                    radial-gradient(ellipse 900px 600px at 12% 8%, rgba(14, 205, 219, 0.14), transparent 60%),
+                    radial-gradient(ellipse 900px 600px at 88% 30%, rgba(244, 244, 142, 0.09), transparent 60%),
+                    radial-gradient(ellipse 900px 700px at 30% 85%, rgba(64, 132, 255, 0.12), transparent 60%),
+                    linear-gradient(rgba(14, 205, 219, 0.07) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(14, 205, 219, 0.07) 1px, transparent 1px);
+                background-size: auto, auto, auto, 48px 48px, 48px 48px;
+                background-attachment: fixed;
+                background-repeat: no-repeat, no-repeat, no-repeat, repeat, repeat;
+            }
+
             .footer {
-                color: #f4f48e; 
+                color: #f4f48e;
                 text-align: center;
-                padding: 20px 0;
+                padding: 30px 0 24px;
+                margin-top: 20px;
                 font-family: "Raleway", sans-serif;
                 font-size: 16px;
+                border-top: 1px solid rgba(14, 205, 219, 0.2);
+            }
 
+            .footer p{
+                margin: 6px 0;
+                opacity: 0.85;
             }
 
             .full-homepage{
@@ -73,6 +94,13 @@
             .icon-contact-button{
                 border-style: none;
                 background-color: transparent;
+                cursor: pointer;
+                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+            }
+
+            .icon-contact-button:hover{
+                transform: translateY(-4px) scale(1.15);
+                filter: drop-shadow(0 6px 14px rgba(14, 205, 219, 0.55));
             }
 
             .slide-header{
@@ -80,7 +108,20 @@
                 font-size: 50px;
                 color: rgb(244, 244, 142);
                 margin-left: 80px;
+                margin-top: 40px;
+                position: relative;
+                display: inline-block;
 
+            }
+
+            .slide-header::after{
+                content: '';
+                display: block;
+                width: 72px;
+                height: 4px;
+                margin-top: 10px;
+                border-radius: 3px;
+                background: linear-gradient(90deg, rgb(14, 205, 219), rgb(244, 244, 142));
             }
 
             .interest-header{
@@ -89,6 +130,16 @@
                 color: rgb(244, 244, 142);
                 margin-top: 40px;
                 margin-left: 80px;
+            }
+
+            .interest-header::after{
+                content: '';
+                display: block;
+                width: 64px;
+                height: 3px;
+                margin-top: 8px;
+                border-radius: 3px;
+                background: linear-gradient(90deg, rgb(14, 205, 219), rgb(244, 244, 142));
             }
             
             .interest-text{
@@ -116,8 +167,15 @@
                 max-width: 900px;
                 border-radius: 12px;
                 overflow: hidden;
-                box-shadow: 0 6px 30px rgba(14,205,219,0.08);
+                border: 1px solid rgba(14, 205, 219, 0.2);
+                box-shadow: 0 6px 30px rgba(14,205,219,0.12);
                 background: #000;
+                transition: box-shadow 0.35s ease, border-color 0.35s ease;
+            }
+
+            .interest-video:hover{
+                border-color: rgba(14, 205, 219, 0.5);
+                box-shadow: 0 10px 40px rgba(14,205,219,0.22);
             }
 
             /* News / journal bar next to the video */
@@ -128,10 +186,18 @@
                 display: flex;
                 flex-direction: column;
                 background: rgba(14, 54, 68, 0.35);
+                backdrop-filter: blur(14px) saturate(140%);
+                -webkit-backdrop-filter: blur(14px) saturate(140%);
                 border: 1px solid rgba(244, 244, 142, 0.15);
                 border-radius: 12px;
                 padding: 20px;
                 box-shadow: 0 6px 30px rgba(14,205,219,0.08);
+                transition: var(--transition-smooth, 0.35s ease);
+            }
+
+            .news-panel:hover{
+                border-color: rgba(14, 205, 219, 0.4);
+                box-shadow: 0 10px 40px rgba(14,205,219,0.18);
             }
 
             .news-panel-header{
@@ -288,12 +354,22 @@
                     font-size: clamp(1rem, 4vw, 2rem);
                 }
 
+                .biography-header::after{
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
                 .interest-header{
                     margin-left: 0;
                     margin-top: 40px;
                     text-align: center;
                     font-size: clamp(1rem, 4vw, 2rem);
 
+                }
+
+                .interest-header::after{
+                    margin-left: auto;
+                    margin-right: auto;
                 }
 
                 .interest-video-container{
@@ -304,6 +380,9 @@
 
                 .interest-video{
                     order: 1;
+                    flex: none;
+                    width: 100%;
+                    max-width: 100%;
                 }
 
                 .news-panel{
@@ -399,7 +478,12 @@
                     text-align: center;
                     padding: 0;
                     margin-left: -30px;
-                    
+
+                }
+
+                .experience::after{
+                    margin-left: auto;
+                    margin-right: auto;
                 }
 
 
@@ -911,9 +995,9 @@
                 </div>
                 <!-- Video inserted near Interest section -->
                 <div class="interest-video-container">
-                    <div class="interest-video" id="videoPlayer" style="position: relative; cursor: pointer;">
-                        <img id="videoThumbnail" src="image/El.png" alt="Video thumbnail" style="width: 100%; height: auto; display: block; border-radius: 12px;">
-                        <div id="playButton" class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background-color: rgba(244, 244, 142, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 30px rgba(14,205,219,0.3);">
+                    <div class="interest-video" id="videoPlayer" style="position: relative;">
+                        <img id="videoThumbnail" src="image/El.png" alt="Video thumbnail" style="width: 100%; height: auto; display: block; border-radius: 12px; cursor: pointer;">
+                        <div id="playButton" class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background-color: rgba(244, 244, 142, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 30px rgba(14,205,219,0.3); cursor: pointer;">
                             <i class="fa-solid fa-play" style="color: #000; font-size: 40px; margin-left: 8px;"></i>
                         </div>
                         <video id="videoElement" style="width: 100%; height: auto; display: none; border-radius: 12px;" controls playsinline preload="metadata">
@@ -939,29 +1023,23 @@
                 </div>
 
                 <script>
-                    function hidePlayButton() {
-                        document.getElementById('playButton').style.display = 'none';
-                    }
-
-                    function hideThumbnail() {
-                        document.getElementById('videoThumbnail').style.display = 'none';
-                    }
-
-                    function showVideo() {
-                        document.getElementById('videoElement').style.display = 'block';
-                    }
-
-                    function playVideo() {
-                        document.getElementById('videoElement').play();
-                    }
-
                     function initVideoPlayer() {
-                        document.getElementById('videoPlayer').addEventListener('click', function() {
-                            hidePlayButton();
-                            hideThumbnail();
-                            showVideo();
-                            playVideo();
-                        });
+                        const playButton = document.getElementById('playButton');
+                        const thumbnail = document.getElementById('videoThumbnail');
+                        const video = document.getElementById('videoElement');
+
+                        function startVideo() {
+                            playButton.style.display = 'none';
+                            thumbnail.style.display = 'none';
+                            video.style.display = 'block';
+                            video.play();
+                        }
+
+                        // Only the thumbnail/play-button trigger playback.
+                        // Once the native <video> controls take over, clicks
+                        // on them (e.g. pause) must not be intercepted again.
+                        thumbnail.addEventListener('click', startVideo);
+                        playButton.addEventListener('click', startVideo);
                     }
 
                     initVideoPlayer();
