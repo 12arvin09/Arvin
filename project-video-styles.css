@@ -321,3 +321,209 @@ video {
         right: -30px;
     }
 }
+
+/* ============================================================
+   Shared visual theme — brought in line with index.html
+   ============================================================ */
+:root{
+    --color-accent: rgb(244, 244, 142);
+    --color-cyan: rgb(14, 205, 219);
+    --color-navy: rgb(14, 54, 68);
+}
+
+html,
+body{
+    margin: 0;
+}
+
+/* Ambient tech-grid backdrop, fixed like a starfield; the inline
+   background-color on each page stays black underneath. */
+body{
+    background-image:
+        radial-gradient(ellipse 900px 600px at 12% 8%, rgba(14, 205, 219, 0.14), transparent 60%),
+        radial-gradient(ellipse 900px 600px at 88% 30%, rgba(244, 244, 142, 0.09), transparent 60%),
+        radial-gradient(ellipse 900px 700px at 30% 85%, rgba(64, 132, 255, 0.12), transparent 60%),
+        linear-gradient(rgba(14, 205, 219, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(14, 205, 219, 0.07) 1px, transparent 1px);
+    background-size: auto, auto, auto, 48px 48px, 48px 48px;
+    background-attachment: fixed;
+    background-repeat: no-repeat, no-repeat, no-repeat, repeat, repeat;
+}
+
+/* Section title with the homepage gradient underline */
+.activity-name-name{
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 22px rgba(14, 205, 219, 0.35);
+}
+
+.activity-name-name::after{
+    content: '';
+    display: block;
+    width: 72px;
+    height: 4px;
+    margin: 14px auto 0;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--color-cyan), var(--color-accent));
+}
+
+.activity{
+    max-width: 1180px;
+    margin: 40px auto 60px;
+    padding: 0 24px;
+    gap: 44px;
+    align-items: flex-start;
+}
+
+/* Glass card around the project write-up */
+.activity-description{
+    background: rgba(14, 54, 68, 0.35);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid rgba(244, 244, 142, 0.15);
+    border-radius: 16px;
+    padding: 30px 34px;
+    box-shadow: 0 6px 30px rgba(14, 205, 219, 0.08);
+    transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.activity-description:hover{
+    border-color: rgba(14, 205, 219, 0.4);
+    box-shadow: 0 10px 40px rgba(14, 205, 219, 0.18);
+}
+
+.activity-description-text{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.activity-description-text + .activity-description-text{
+    margin-top: 18px;
+}
+
+/* Framed media gallery */
+.gallery-container{
+    border: 1px solid rgba(14, 205, 219, 0.2);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 30px rgba(14, 205, 219, 0.12);
+    transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.gallery-container:hover{
+    border-color: rgba(14, 205, 219, 0.45);
+    box-shadow: 0 10px 40px rgba(14, 205, 219, 0.22);
+}
+
+/* Slide counter as a small chip on the media, not a black band above it */
+.index{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: rgba(14, 54, 68, 0.6);
+    border: 1px solid rgba(14, 205, 219, 0.35);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    font: 600 12px/1 "Raleway", sans-serif;
+    color: var(--color-accent);
+}
+
+.dot{
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.dot:hover{
+    transform: scale(1.25);
+}
+
+/* Pull the carousel arrows inside the framed gallery */
+.prev,
+.next{
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+    z-index: 2;
+    background: rgba(14, 54, 68, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(14, 205, 219, 0.4);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+}
+
+.prev{ left: 12px; }
+.next{ right: 12px; }
+
+.prev:hover,
+.next:hover{
+    background: rgba(14, 205, 219, 0.85);
+    color: rgb(2, 8, 12);
+    box-shadow: 0 0 20px rgba(14, 205, 219, 0.7);
+}
+
+/* Related-report cards at the foot of the page */
+.container{
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.project-preview-photo,
+.project-preview-photo-focus{
+    border-radius: 18px;
+    border: 1px solid rgba(14, 205, 219, 0.18);
+}
+
+.project-preview-photo-container{
+    transition: transform 0.35s ease;
+}
+
+.project-preview-photo-container:hover{
+    transform: translateY(-4px);
+}
+
+.project-preview-caption{
+    margin-top: 12px;
+    letter-spacing: 0.3px;
+    text-shadow: 0 0 14px rgba(14, 205, 219, 0.25);
+}
+
+.project-preview a{
+    text-decoration: none;
+    color: inherit;
+}
+
+@media (max-width: 1200px){
+    .activity{
+        margin: 24px auto 40px;
+        gap: 28px;
+    }
+
+    .activity-description{
+        align-self: stretch;
+        padding: 24px 22px;
+    }
+
+    .container{
+        padding: 40px 20px;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 600px){
+    .activity{
+        padding: 0 14px;
+    }
+
+    .activity-description{
+        padding: 20px 18px;
+    }
+}
