@@ -1,6 +1,16 @@
 * {
     box-sizing: border-box;
 }
+
+:root {
+    --color-accent: rgb(244, 244, 142);
+    --color-accent-glow: rgba(244, 244, 142, 0.35);
+    --color-navy: rgb(14, 54, 68);
+    --color-cyan: rgb(14, 205, 219);
+    --font-main: "Raleway", sans-serif;
+    --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
     .header {
         position: fixed;
         top: 0;
@@ -15,20 +25,25 @@
         width: 100%;
         height:  100px;
 
-        background: transparent;
-        backdrop-filter: blur(10px);
-        box-shadow: 2px 2px 20px rgba(207, 224, 53, 0.308);
+        
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        box-shadow: 0 4px 30px rgba(14, 205, 219, 0.15);
         z-index: 10;
     }
 
     .name {
         flex: 1;
-        min-width: 0; 
+        min-width: 0;
         overflow: hidden;
     }
 
     .name-edit {
-        color: rgb(244, 244, 142);
+        background: linear-gradient(90deg, var(--color-accent), var(--color-cyan));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: var(--color-accent);
         font-size: 55px;
         font-family: "Raleway", sans-serif;
         font-size: clamp(1.2rem, 5vw, 3rem);
@@ -36,34 +51,50 @@
         margin-left: 80px;
         margin-right: 10px;
 
-        text-shadow: 0 0 5px rgb(172, 188, 5);
-        white-space: nowrap; 
+        filter: drop-shadow(0 0 12px rgba(14, 205, 219, 0.35));
+        white-space: nowrap;
         text-decoration-line: none;
     }
 
     .home,
     .publications {
-        background-color: rgb(14, 54, 68);
-        border: none;
+        background-color: var(--color-navy);
+        border: 1px solid rgba(244, 244, 142, 0.4);
         border-radius: 30px;
 
-        color: rgb(244, 244, 142);
-        font-family: "Raleway", sans-serif;
+        color: var(--color-accent);
+        font-family: var(--font-main);
         font-size: clamp(0.7rem, 1.4vw, 1.3rem);
 
         min-width: 80px;
         height: auto;
         margin: 20px;
+        padding: 12px 26px;
+        letter-spacing: 0.02em;
 
-        box-shadow: 0px 0px 20px rgba(242, 255, 0, 0.267);
+        box-shadow: 0 0 20px rgba(242, 255, 0, 0.267);
         cursor: pointer;
-        transition: 0.6s;
+        transition: var(--transition-smooth);
     }
 
     .home:hover,
     .publications:hover {
-        background-color: rgb(244, 244, 142);
-        color: rgb(14, 54, 68);
+        background-color: var(--color-accent);
+        color: var(--color-navy);
+        border-color: var(--color-accent);
+        transform: translateY(-3px) scale(1.04);
+        box-shadow: 0 10px 30px var(--color-accent-glow), 0 0 40px rgba(14, 205, 219, 0.25);
+    }
+
+    .home:active,
+    .publications:active {
+        transform: translateY(0);
+    }
+
+    .home:focus-visible,
+    .publications:focus-visible {
+        outline: 2px solid var(--color-cyan);
+        outline-offset: 3px;
     }
 
 
@@ -90,8 +121,23 @@
     .bar {
         height: 4px;
         width: 30px;
-        background-color:  rgb(244, 244, 142);
+        background-color: var(--color-accent);
         margin: 4px 0;
+        border-radius: 2px;
+        transition: var(--transition-smooth);
+        transform-origin: center;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 
     .links-right {
@@ -110,6 +156,18 @@
         display: flex;
         background:transparent;
         border-style: none;
+        animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
 

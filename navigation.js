@@ -3,4 +3,5 @@ const linksRight = document.querySelector('.links-right');
 
 hamburger.addEventListener('click', () => {
     linksRight.classList.toggle('activee');
+    hamburger.classList.toggle('active');
 });
