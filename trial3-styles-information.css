@@ -130,13 +130,13 @@
 
 @keyframes glow {
     0% {
-    filter: drop-shadow(0 0 20px rgba(0, 238, 255,0.4));
+    filter: drop-shadow(0 0 10px rgba(0, 238, 255,0.18));
     }
     50% {
-        filter: drop-shadow(0 0 30px rgba(244, 244, 142, 0.635));
+        filter: drop-shadow(0 0 16px rgba(244, 244, 142, 0.22));
     }
     100% {
-        filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.426));
+        filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.18));
     }
 }
 
@@ -145,7 +145,7 @@
     border-radius: 50%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    border: 3px solid rgba(14, 205, 219, 0.35);
+    border: 1px solid rgba(14, 205, 219, 0.18);
 
     width: 60%;
     margin: 0 auto ;
